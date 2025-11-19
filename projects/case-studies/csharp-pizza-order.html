@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C# Pizza Order Form Case Study — Nicholas Zastrow</title>
+  <meta name="description" content="C# Pizza Order Form case study by Nicholas Zastrow — Windows Forms customer info, delivery options, and pizza pricing." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css" />
+</head>
+
+<body>
+  <nav class="nav scrolled">
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="logo">NZ</div>
+        <a href="../../index.html">Back to Portfolio</a>
+      </div>
+      <div class="nav-links">
+        <a href="../../index.html#school-projects">School Projects</a>
+        <a href="csharp-bakery.html">Bakery Shop</a>
+        <a href="javascript:void(0)" onclick="window.scrollTo({top:0, behavior:'smooth'});">Top</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container" style="padding-top:90px; padding-bottom:40px;">
+    <header class="section">
+      <span class="kicker">C# Case Study</span>
+      <h1 class="title-xl">Pizza Order Form — Customer &amp; Pricing Logic</h1>
+      <p class="lead">
+        A Windows Forms application that collects customer details, supports pickup or delivery, and calculates
+        total price based on crust type, size, cheese options, and toppings. The final order summary is displayed
+        so the customer can confirm the details.
+      </p>
+      <div class="cta" style="margin-top:14px;">
+        <a class="btn btn-primary"
+           href="https://github.com/NickZ79/Csharp_Projects/tree/main/Pizza__Order_Form_Project"
+           target="_blank" rel="noopener">View Source on GitHub →</a>
+      </div>
+    </header>
+
+    <!-- Screenshots -->
+    <section class="section">
+      <h2>Screenshots</h2>
+      <div class="grid cols-3" style="margin-top:12px;">
+        <div class="card">
+          <h3>Code-Behind</h3>
+          <img src="../../images/csharp/pizza/Pizza Order Form Code.jpg" alt="Screenshot of Pizza order form C# code-behind." />
+          <p class="muted">Event handlers and pricing logic that respond to radio buttons, checkboxes, and text fields.</p>
+        </div>
+        <div class="card">
+          <h3>Form Designer</h3>
+          <img src="../../images/csharp/pizza/Pizza Order Form Designer Code.jpg" alt="Screenshot of Pizza order form designer code in C#." />
+          <p class="muted">Designer-generated layout code structuring the customer information and pizza configuration sections.</p>
+        </div>
+         <div class="card">
+          <h3>Completed Order Example</h3>
+          <img src="../../images/csharp/pizza/pizzaform.jpg" alt="Pizza order form with example values showing final order summary and total." />
+          <p class="muted">An example test run that shows a full order with delivery, toppings, and calculated total price.</p>
+        </div>
+    </section>
+
+    <!-- Overview -->
+    <section class="section">
+      <h2>Project Overview</h2>
+      <p>
+        This assignment expanded on basic Windows Forms skills by combining user input, conditional UI, and
+        pricing logic into a single form. The app collects the customer's name and, if delivery is selected,
+        prompts for address and phone number. It then allows the user to configure the pizza: pickup or delivery,
+        crust type, size, cheese options, and toppings.
+      </p>
+      <p>
+        Once the choices are made, the application calculates the total price and displays an order summary.
+        This provides a simple but realistic flow for ordering a pizza and demonstrates how UI controls and
+        business logic can work together.
+      </p>
+    </section>
+
+    <!-- Code Highlight -->
+    <section class="section">
+      <h2>Key Logic (Order Summary &amp; Pricing)</h2>
+      <p class="muted">A simplified example of how the total and summary might be built:</p>
+      <pre><code>private void btnPlaceOrder_Click(object sender, EventArgs e)
+{
+    decimal total = 0m;
+
+    // Base price from size
+    if (radSmall.Checked)  total += SMALL_PRICE;
+    if (radMedium.Checked) total += MEDIUM_PRICE;
+    if (radLarge.Checked)  total += LARGE_PRICE;
+
+    // Crust and toppings
+    if (radDeepDish.Checked) total += DEEP_DISH_UPCHARGE;
+
+    if (chkPepperoni.Checked) total += TOPPING_PRICE;
+    if (chkMushrooms.Checked) total += TOPPING_PRICE;
+    if (chkOnions.Checked)    total += TOPPING_PRICE;
+
+    // Delivery charge
+    bool isDelivery = radDelivery.Checked;
+    if (isDelivery)
+        total += DELIVERY_FEE;
+
+    string summary = $"Customer: {txtName.Text}\n" +
+                     $"Type: {(isDelivery ? "Delivery" : "Pickup")}\n" +
+                     $"Total: {total:C}";
+
+    txtSummary.Text = summary;
+}</code></pre>
+      <p class="muted">
+        The actual project uses the specific controls defined on the form, but the idea is the same:
+        determine a base price from size and crust, add charges for toppings and delivery, then present a
+        readable order summary.
+      </p>
+    </section>
+
+    <!-- What I Learned -->
+    <section class="section">
+      <h2>What I Learned</h2>
+      <ul class="qa-list">
+        <li>How to design a multi-section Windows Forms UI that handles customer info and configuration options.</li>
+        <li>How to use radio buttons and checkboxes to drive pricing logic in C#.</li>
+        <li>How to conditionally show or require extra fields (like address and phone) for delivery orders.</li>
+        <li>How to build a clear summary string that confirms the customer's selections and total cost.</li>
+      </ul>
+    </section>
+
+    <!-- CTA -->
+    <section class="section" style="text-align:center;">
+      <h2>Explore the Code</h2>
+      <p class="lead">
+        You can review the full implementation, including all controls, validation, and pricing logic,
+        in the GitHub repository.
+      </p>
+      <div class="cta" style="margin-top:10px;">
+        <a class="btn btn-primary"
+           href="https://github.com/NickZ79/C-Projects/tree/main/Pizza__Order_Form_Project"
+           target="_blank" rel="noopener">View on GitHub →</a>
+        <a class="btn btn-ghost" href="../../index.html#school-projects">Back to School Projects</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="foot-inner">
+      <span>© <span id="year"></span> Nicholas Zastrow</span>
+      <div class="links">
+        <a href="../../index.html">Portfolio</a>
+        <a href="#top" onclick="window.scrollTo({top:0, behavior:'smooth'}); return false;">Top</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

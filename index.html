@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nicholas Zastrow — Portfolio</title>
+  <meta name="description" content="Professional portfolio of Nicholas Zastrow — Software QA Analyst and Developer." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Dynamic Header (loaded from includes/header.html) -->
+  <div id="header"></div>
+
+  <main>
+    <!-- HERO SECTION -->
+    <header class="hero" id="home">
+      <img src="images/me.jpg" alt="Portrait of Nicholas Zastrow" />
+      <h1 class="title-xl">Nicholas Zastrow</h1>
+      <p class="lead">
+        Software QA Analyst and Web Developer passionate about quality, usability, and clean code.
+        Over 2.5 years of QA experience at Sagenverse, blending technical skill with creative design.
+      </p>
+      <div class="cta">
+        <a href="#qa-work" class="btn btn-primary">QA Work</a>
+        <a href="#school-projects" class="btn btn-ghost">School Projects</a>
+      </div>
+    </header>
+
+    <!-- QA WORK SUMMARY -->
+    <section id="qa-work" class="section container">
+      <h2 class="title-xl" style="text-align:center; margin-bottom:20px;">QA Work</h2>
+      <div class="grid cols-3">
+         <div></div> <!-- empty left column -->
+        <div class="feature">
+          <span class="kicker">Sagenverse</span>
+          <span class="title">WebGL &amp; Mobile App QA</span>
+          <p class="muted">
+            Exploratory and regression testing across Unity and React Native builds. Test planning,
+            defect documentation, Monday board workflows, and cross-team verification for multiple releases.
+          </p>
+           <p style="margin-top:18px; text-align:center;">
+        <a class="btn btn-primary" href="QA Work/QA Work.html">View QA Experience
+        </a>
+      </p>
+        </div>
+        <div></div> <!-- empty right column -->
+      </div>
+    </section>
+
+    <!-- SCHOOL PROJECTS -->
+    <section id="school-projects" class="section container">
+      <h2 class="title-xl" style="text-align:center; margin-bottom:10px;">School Projects</h2>
+
+      <!-- WEB PROJECTS (LIVE DEMOS) -->
+      <h3 style="text-align:center; margin:10px 0 16px;">Web Projects (Live Demos)</h3>
+      <div class="grid cols-3" style="margin-bottom:22px;">
+
+        <!-- HTML & CSS Final -->
+        <div class="feature">
+          <span class="kicker">HTML &amp; CSS</span>
+          <span class="title">TTRPG Multi-Page Site (Final)</span>
+          <p class="muted">
+            A seven-page, TTRPG-themed website with shared navigation, custom styling, images, and embedded content,
+            built as the final project for an HTML &amp; CSS course.
+          </p>
+          <p>
+            <a class="btn btn-primary"
+               href="projects/web-projects/HTML_CSS_Final/index.html"
+               target="_blank" rel="noopener">Open Project →</a>
+          </p>
+          <p style="margin-top:6px;">
+            <a class="btn btn-ghost"
+               href="https://github.com/NickZ79/HTML_CSS_projects"
+               target="_blank" rel="noopener">View on GitHub →</a>
+          </p>
+        </div>
+
+        <!-- JavaScript Midterm -->
+        <div class="feature">
+          <span class="kicker">JavaScript</span>
+          <span class="title">Midterm — Food Ordering System</span>
+          <p class="muted">
+            A restaurant-style order form that calculates the subtotal based on selected items, applies a tip
+            percentage, and returns the grand total using client-side JavaScript.
+          </p>
+          <p>
+            <a class="btn btn-primary"
+               href="projects/web-projects/Midterm_Order_Form/index.html"
+               target="_blank" rel="noopener">Open Project →</a>
+          </p>
+          <p style="margin-top:6px;">
+            <a class="btn btn-ghost"
+               href="https://github.com/NickZ79/JavaScript_projects/tree/main/Midterm_Order_Form"
+               target="_blank" rel="noopener">View on GitHub →</a>
+          </p>
+        </div>
+
+        <!-- JavaScript Final -->
+        <div class="feature">
+          <span class="kicker">JavaScript</span>
+          <span class="title">Final — Multi-Page Website</span>
+          <p class="muted">
+            A fully structured multi-page site (4+ pages) implementing shared navigation, Modernizr integration,
+            math functions, decision logic, and form validation, all passing W3C validation.
+          </p>
+          <p>
+            <a class="btn btn-primary"
+               href="projects/web-projects/Final_Multi_Page_Site/index.html"
+               target="_blank" rel="noopener">Open Project →</a>
+          </p>
+          <p style="margin-top:6px;">
+            <a class="btn btn-ghost"
+               href="https://github.com/NickZ79/JavaScript_projects/tree/main/Final_Multi_Page_Site"
+               target="_blank" rel="noopener">View on GitHub →</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- C# CASE STUDIES -->
+      <h3 style="text-align:center; margin:18px 0 12px;">C# Case Studies</h3>
+      <div class="grid cols-3" style="margin-bottom:22px;">
+
+        <!-- Bakery Shop -->
+        <div class="feature">
+          <span class="kicker">C# / WinForms</span>
+          <span class="title">Bakery Shop Order Form</span>
+          <p class="muted">
+            A Windows Forms application that calculates item subtotals, sales tax, optional discounts, and
+            overall order totals, with a clear form workflow and basic validation.
+          </p>
+          <p>
+            <a class="btn btn-primary" href="projects/case-studies/csharp-bakery.html">
+              View Bakery Case Study →
+            </a>
+          </p>
+          <p style="margin-top:6px;">
+            <a class="btn btn-ghost"
+               href="https://github.com/NickZ79/Csharp_projects/tree/main/Bakery_Shop_Project"
+               target="_blank" rel="noopener">View on GitHub →</a>
+          </p>
+        </div>
+
+        <!-- Pizza Order Form -->
+        <div class="feature">
+          <span class="kicker">C# / WinForms</span>
+          <span class="title">Pizza Order Form</span>
+          <p class="muted">
+            A pizza ordering interface that collects customer info, toggles delivery fields, manages crust, size,
+            toppings, and pricing rules, and displays a formatted order summary.
+          </p>
+          <p>
+            <a class="btn btn-primary" href="projects/case-studies/csharp-pizza.html">
+              View Pizza Case Study →
+            </a>
+          </p>
+          <p style="margin-top:6px;">
+            <a class="btn btn-ghost"
+               href="https://github.com/NickZ79/Csharp_projects/tree/main/Pizza__Order_Form_Project"
+               target="_blank" rel="noopener">View on GitHub →</a>
+          </p>
+        </div>
+
+        <!-- C# placeholder -->
+        <div class="feature">
+          <span class="kicker">C#</span>
+          <span class="title">Future C# Project</span>
+          <p class="muted">
+            Reserved for an additional desktop or console project as coursework continues.
+          </p>
+          <p>
+            <a class="btn btn-ghost" href="#" onclick="alert('Coming soon!'); return false;">
+              Coming Soon
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <!-- JAVA CASE STUDIES -->
+      <h3 style="text-align:center; margin:18px 0 12px;">Java Case Studies</h3>
+      <div class="grid cols-3" style="margin-bottom:22px;">
+
+        <!-- Pizza Maker (Java) -->
+        <div class="feature">
+          <span class="kicker">Java</span>
+          <span class="title">Pizza Maker (OOP &amp; Testing)</span>
+          <p class="muted">
+            A console-based pizza builder that uses ingredient classes, pricing logic, and a custom test harness
+            to validate multiple pizza combinations.
+          </p>
+          <p>
+            <a class="btn btn-primary" href="projects/case-studies/java-pizza-maker.html">
+              View Java Pizza Case Study →
+            </a>
+          </p>
+          <p style="margin-top:6px;">
+            <a class="btn btn-ghost"
+               href="https://github.com/NickZ79/java_projects/tree/main/NKZ_pizza_maker"
+               target="_blank" rel="noopener">View on GitHub →</a>
+          </p>
+        </div>
+
+        <!-- Loan Calculator (Java) -->
+        <div class="feature">
+          <span class="kicker">Java</span>
+          <span class="title">Loan Calculator</span>
+          <p class="muted">
+            Builds formatted loan summaries with borrower information, defaults for missing values, and a helper
+            to calculate loan end dates, plus a small test harness for multiple scenarios.
+          </p>
+          <p>
+            <a class="btn btn-primary" href="projects/case-studies/java-loan-calculator.html">
+              View Loan Case Study →
+            </a>
+          </p>
+          <p style="margin-top:6px;">
+            <a class="btn btn-ghost"
+               href="https://github.com/NickZ79/java_projects/tree/main/NKZ_loan_calculator"
+               target="_blank" rel="noopener">View on GitHub →</a>
+          </p>
+        </div>
+
+        <!-- Java placeholder -->
+        <div class="feature">
+          <span class="kicker">Java</span>
+          <span class="title">Future Java Project</span>
+          <p class="muted">
+            Space reserved for another OOP or algorithms-focused Java assignment.
+          </p>
+          <p>
+            <a class="btn btn-ghost" href="#" onclick="alert('Coming soon!'); return false;">
+              Coming Soon
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <!-- SQL & PHP/MYSQL CASE STUDY -->
+      <h3 style="text-align:center; margin:18px 0 12px;">SQL Databases &amp; PHP / MySQL</h3>
+ <div class="grid cols-3">
+    <div></div> <!-- empty left column -->
+
+    <div class="feature">
+      <span class="kicker">SQL &amp; PHP</span>
+      <h4 class="title">Family Reunion DB &amp; Online Banking</h4>
+      <p class="muted">
+        A combined case study covering a family-reunion relational database (schema design, queries)
+        and a PHP/MySQL midterm project simulating account balances and customer views.
+      </p>
+
+      <p style="margin-top:18px; text-align:center;">
+        <a class="btn btn-primary" href="projects/case-studies/sql-php.html">
+          View SQL/PHP Case Study →
+        </a>
+      </p>
+
+      <p style="margin-top:10px; text-align:center;">
+        <a class="btn btn-ghost"
+           href="https://github.com/NickZ79/SQL_Database_projects"
+           target="_blank" rel="noopener">
+          SQL Projects on GitHub →
+        </a>
+      </p>
+
+      <p style="margin-top:10px; text-align:center;">
+        <a class="btn btn-ghost"
+           href="https://github.com/NickZ79/PHP_MYSQL_projects"
+           target="_blank" rel="noopener">
+          PHP/MySQL Projects on GitHub →
+        </a>
+      </p>
+    </div>
+
+    <div></div> <!-- empty right column -->
+  </div>
+    </section>
+  </main>
+
+  <!-- Dynamic Footer (loaded from includes/footer.html) -->
+  <div id="footer"></div>
+
+  <!-- Include Loader Script -->
+  <script>
+    const BASE = "./";
+
+    function loadPart(id, file) {
+      fetch(BASE + "includes/" + file)
+        .then(resp => resp.text())
+        .then(html => {
+          html = html.replace(/{{BASE}}/g, BASE);
+          const container = document.getElementById(id);
+          if (!container) return;
+          container.innerHTML = html;
+
+          if (id === "footer") {
+            const yearSpan = document.getElementById("year");
+            if (yearSpan) {
+              yearSpan.textContent = new Date().getFullYear();
+            }
+          }
+        })
+        .catch(err => console.error("Include load error for " + file, err));
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      loadPart("header", "header.html");
+      loadPart("footer", "footer.html");
+    });
+  </script>
+</body>
+</html>

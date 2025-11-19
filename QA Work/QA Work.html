@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>QA Work at Sagenverse — Nicholas Zastrow</title>
+  <meta name="description" content="Professional overview of Nicholas Zastrow's QA work at Sagenverse: manual testing, regression plans, bug workflow, release verification, and cross-platform coverage." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <!-- one level up from /QA Work/ -->
+  <link rel="stylesheet" href="../styles.css" />
+
+  <style>
+    /* Page-local helpers ------------------------------------------ */
+    .qa-hero {
+      min-height: 40vh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,.55);
+      padding: 80px 0 40px;
+    }
+
+    .qa-main {
+      padding: 32px 0 40px;
+    }
+
+    .qa-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    @media (min-width: 950px) {
+      .qa-grid {
+        grid-template-columns: 1.2fr .8fr;
+      }
+    }
+
+    .qa-embed {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      background: #000;
+      margin-top: 18px;
+    }
+
+    .qa-embed iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.8);
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    .muted-small {
+      color: var(--text-2);
+      font-size: 14px;
+    }
+
+    .qa-list li {
+      margin-bottom: 6px;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 11px;
+      padding: 2px 7px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.8);
+      margin-right: 6px;
+    }
+
+    .qa-callout {
+      background: rgba(58,180,242,.10);
+      border: 1px solid rgba(58,180,242,.40);
+      padding: 14px;
+      border-radius: 14px;
+    }
+
+    .qa-board {
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      background: #000;
+    }
+
+    .qa-board img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAV -->
+  <nav class="nav scrolled">
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="logo">NZ</div>
+        <a class="brand-name" href="../index.html">Back to Portfolio</a>
+      </div>
+      <div class="nav-links">
+        <a href="#hero">Overview</a>
+        <a href="#summary">Scope</a>
+        <a href="#timeline">Timeline</a>
+        <a href="#workflow">Bug Workflow</a>
+        <a href="#achievements">Highlights</a>
+        <a href="#lessons">Lessons</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO / EMBED -->
+  <header class="qa-hero" id="hero">
+    <div class="container">
+      <span class="pill">Part-time QA • Sole Tester • 2.5+ Years</span>
+      <h1 class="title-xl" style="margin-top:12px;">QA Work at Sagenverse</h1>
+      <p class="lead">
+        As the only QA Analyst at Sagenverse, I manually tested Unity WebGL, React Native mobile apps,
+        and the web platform while helping build our entire QA process from the ground up.
+      </p>
+
+      <div class="qa-embed">
+        <!-- Embedded Sagen (dev environment) -->
+        <iframe
+          id="48468adf-db09-4653-8d04-2f9b5fbe7e56"
+          src="https://dev2.sagenverse.com/room?roomId=5b88acde-e812-4d28-9368-c72b64789dcd&accessId=48468adf-db09-4653-8d04-2f9b5fbe7e56&accessId=48468adf-db09-4653-8d04-2f9b5fbe7e56&_branch_match_id=published"
+          allowfullscreen="true"
+          allow="clipboard-write; clipboard-read; fullscreen">
+        </iframe>
+      </div>
+      <p class="muted-small" style="margin-top:8px;">
+        This embedded Sagen is one of the larger rooms I used for regression and exploratory testing.
+        Availability may vary because it points to a dev environment.
+      </p>
+    </div>
+  </header>
+
+  <main class="container qa-main">
+    <!-- SCOPE SUMMARY -->
+    <section id="summary" class="section" style="padding-top:0;">
+      <h2>What I Tested &amp; How I Worked</h2>
+      <div class="qa-grid" style="margin-top:12px;">
+        <div>
+          <h3>Platforms &amp; Environments</h3>
+          <ul class="qa-list">
+            <li><strong>Mobile:</strong> iOS &amp; Android (React Native builds via BrowserStack and on-device).</li>
+            <li><strong>Web:</strong> Chrome, Edge, and Safari against Dev, Staging, and Production.</li>
+            <li><strong>Unity WebGL:</strong> Embedded experiences like the Sagen above.</li>
+            <li><strong>Admin Portal:</strong> 2.1 front-end portal for organization admins and user provisioning.</li>
+          </ul>
+
+          <h3 style="margin-top:14px;">Testing Types</h3>
+          <ul class="qa-list">
+            <li>Feature testing for new functionality and UI/UX flows.</li>
+            <li>Regression testing from a full test plan I wrote and maintained.</li>
+            <li>Exploratory testing to mimic first-time and power users.</li>
+            <li>Cross-platform checks to keep behavior consistent across mobile and web.</li>
+            <li>Release smoke testing for minor 1.0 releases, 2.0 launch, and early 2.1 work.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Tools &amp; Collaboration</h3>
+          <ul class="qa-list">
+            <li><strong>BrowserStack:</strong> device coverage for iOS/Android and browser combinations.</li>
+            <li><strong>Monday.com:</strong> custom QA board for bugs, polish, and hard-to-reproduce issues.</li>
+            <li><strong>GitHub:</strong> learned branching and version control practices from the engineering team.</li>
+            <li><strong>Miro:</strong> used for hackathon planning and feature brainstorming.</li>
+            <li><strong>Unity &amp; React Native builds:</strong> regularly tested new player and app builds.</li>
+          </ul>
+          <p class="muted-small">
+            Day-to-day I worked closely with Unity, front-end, and back-end developers, plus the Product Manager
+            and Engineering Lead, to make sure issues were understood, prioritized, and fixed.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section id="timeline" class="section">
+      <h2>How My QA Role Grew Over Time</h2>
+
+      <h3 style="margin-top:10px;">Phase 1 — Exploratory Onboarding (Jul–Oct 2023)</h3>
+      <ul class="qa-list">
+        <li>Came in with <strong>zero formal QA experience</strong>, so the goal was to use the product like a brand-new user.</li>
+        <li>Spent ~90 days inside the app: building Sagans, clicking everything, and reporting anything that felt off.</li>
+        <li>Provided UX feedback and surfaced issues that long-time team members had grown blind to.</li>
+      </ul>
+
+      <h3>Phase 2 — Learning QA Fundamentals (Late 2023–Mid 2024)</h3>
+      <ul class="qa-list">
+        <li>Started learning how to <strong>properly document</strong> issues: repro steps, expected vs actual, environment, and media.</li>
+        <li>Inherited an old regression outline and began using it as a base while I learned what good coverage looked like.</li>
+        <li>Provided daily testing across features, responded to developer requests, and joined regular stand-ups.</li>
+        <li>Met about an hour a month with leads from each engineering team to grow my QA skills.</li>
+      </ul>
+
+      <h3>Phase 3 — 1.0 Hackathon &amp; Rebuild Planning (Oct 2023)</h3>
+      <ul class="qa-list">
+        <li>Participated in a <strong>week-long hackathon</strong> to evaluate whether to keep Unity and whether our vision was technically possible.</li>
+        <li>Did live testing as the team built new prototypes, validating that key interactions actually worked in practice.</li>
+        <li>Got hands-on time in Unity and learned how engine changes affected QA and regression risk.</li>
+      </ul>
+
+      <h3>Phase 4 — Building 2.0 &amp; Formalizing QA (Late 2023–May 2024)</h3>
+      <ul class="qa-list">
+        <li>Wrote a <strong>fresh regression plan for Sagenverse 2.0</strong> from the ground up as the app was rebuilt.</li>
+        <li>Helped shift from one-off DMs and ad-hoc bug reporting into a structured, trackable workflow.</li>
+        <li>Verified smaller updates to 1.0 while preparing full coverage for the new 2.0 experience.</li>
+      </ul>
+
+      <h3>Phase 5 — 2.0 Release, 2.1 Work, and QA Maturity (May–Nov 2025)</h3>
+      <ul class="qa-list">
+        <li>Participated in all minor 1.0 releases, the major <strong>2.0 release</strong>, and early 2.1 development before lay-offs.</li>
+        <li>Owned smoke tests, hotfix verification, and build sign-off checks.</li>
+        <li>Expanded use of BrowserStack and improved cross-platform coverage.</li>
+        <li>Tested a new front-end portal for organization admins to manage employees and access.</li>
+      </ul>
+    </section>
+
+    <!-- WORKFLOW & BOARD -->
+    <section id="workflow" class="section">
+      <h2>Bug Reporting Workflow &amp; Monday QA Board</h2>
+      <div class="qa-grid" style="margin-top:12px;">
+        <div>
+          <h3>From Chaos to a Clean Pipeline</h3>
+          <ul class="qa-list">
+            <li>Originally, bugs were shared through <strong>DMs and scattered messages</strong>, which made tracking nearly impossible.</li>
+            <li>I helped design a dedicated <strong>QA board in Monday</strong> used by the whole engineering org.</li>
+          </ul>
+
+          <h4 style="margin-top:10px;">Key Columns &amp; Lists</h4>
+          <ul class="qa-list">
+            <li><span class="tag">Bugs</span> Main intake for issues found during testing and by the team.</li>
+            <li><span class="tag">React Front End / Missions</span> Feature-focused slices to keep work organized.</li>
+            <li><span class="tag">Polish</span> Improvements that weren’t true defects but would noticeably improve UX.</li>
+            <li><span class="tag">Very hard to reproduce</span> Known issues that were rare or environment-sensitive.</li>
+            <li><span class="tag">Status</span> Clear states like “New”, “In Progress”, “Ready for QA”, “Verified”.</li>
+          </ul>
+
+          <p class="qa-callout muted-small" style="margin-top:10px;">
+            Each week I met with the Engineering Lead and Product Manager to walk through the board,
+            confirm severity, and make sure the right team (Unity, front-end, back-end) owned each fix.
+          </p>
+        </div>
+
+        <div>
+          <h3>Example Board View</h3>
+          <div class="qa-board" style="margin-top:8px;">
+            <!-- Save your blurred screenshot as /QA Work/images/monday-board.jpg (or .png/.webp) -->
+            "<img src="../images/monday-board.jpg" alt="Example Monday QA board..." />
+" alt="Example Monday QA board with lists for bugs, polish, and hard-to-reproduce issues (sensitive details blurred)." />
+          </div>
+          <p class="muted-small" style="margin-top:8px;">
+            This is a sanitized example of the QA board I used daily. Sensitive details are intentionally blurred
+            but the structure and workflow are representative.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section id="achievements" class="section">
+      <h2>Key Contributions &amp; Wins</h2>
+      <div class="grid cols-3" style="margin-top:12px;">
+        <div class="feature">
+          <span class="kicker">Process</span>
+          <div class="title">Built QA from Scratch</div>
+          <p class="muted">
+            Joined with no formal QA background and became the point person for testing, regression,
+            and release verification. Wrote a full regression plan for Sagenverse 2.0 and helped establish
+            a repeatable QA process.
+          </p>
+        </div>
+        <div class="feature">
+          <span class="kicker">Quality</span>
+          <div class="title">Caught Subtle Issues</div>
+          <p class="muted">
+            Found edge cases and UX issues that would have shipped without a dedicated tester.
+            Engineers appreciated my friendly communication style and thorough eye for “little things”
+            that make a big difference in the final experience.
+          </p>
+        </div>
+        <div class="feature">
+          <span class="kicker">Collaboration</span>
+          <div class="title">Stronger Team Communication</div>
+          <p class="muted">
+            Helped move the team away from ad-hoc DMs to a structured, visible workflow,
+            with weekly triage meetings that aligned Product and Engineering on priorities.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- LESSONS -->
+    <section id="lessons" class="section">
+      <h2>What I Learned as a Sole QA Tester</h2>
+      <ul class="qa-list" style="margin-top:10px;">
+        <li>Good QA is as much about clear <strong>communication</strong> as it is about finding bugs.</li>
+        <li><strong>Exploratory testing</strong> early on surfaces issues before they’re baked into the product.</li>
+        <li>Detailed repro steps and environment info save developers time and reduce back-and-forth.</li>
+        <li>Cross-platform apps require a <strong>healthy respect for differences</strong> between browsers, devices, and OS versions.</li>
+        <li>Being friendly, curious, and collaborative makes it easier to ask hard questions about quality.</li>
+      </ul>
+    </section>
+
+    <!-- CTA -->
+    <section class="section" style="text-align:center;">
+      <h2>Want to know more?</h2>
+      <p class="lead">
+        I’m happy to walk through this Sagen live, discuss my regression plans, or talk about
+        how I’d approach QA at your company.
+      </p>
+      <div class="cta" style="margin-top:12px;">
+        <a class="btn btn-primary" href="../index.html#contact">Contact Me</a>
+        <a class="btn btn-ghost" href="../index.html#home">Back to Home</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="foot-inner">
+      <span>© <span id="year"></span> Nicholas Zastrow</span>
+      <div class="links">
+        <a href="#hero">Top</a>
+        <a href="../index.html">Portfolio</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

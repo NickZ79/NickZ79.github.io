@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Java Pizza Maker Case Study — Nicholas Zastrow</title>
+  <meta name="description" content="Java Pizza Maker case study by Nicholas Zastrow — OOP design, ingredient classes, pricing logic, and custom test runner." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <!-- two levels up from projects/case-studies/ -->
+  <link rel="stylesheet" href="../../styles.css" />
+</head>
+
+<body>
+  <nav class="nav scrolled">
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="logo">NZ</div>
+        <a href="../../index.html">Back to Portfolio</a>
+      </div>
+      <div class="nav-links">
+        <a href="../../index.html#school-projects">School Projects</a>
+        <a href="java-loan-calculator.html">Loan Calculator</a>
+        <a href="javascript:void(0)" onclick="window.scrollTo({top:0, behavior:'smooth'});">Top</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container" style="padding-top:90px; padding-bottom:40px;">
+    <header class="section">
+      <span class="kicker">Java Case Study</span>
+      <h1 class="title-xl">Pizza Maker — OOP &amp; Testing</h1>
+      <p class="lead">
+        A console-based Java project that builds pizzas from ingredient objects, calculates pricing,
+        and uses a custom test runner to verify multiple combinations without external libraries.
+      </p>
+      <div class="cta" style="margin-top:14px;">
+        <a class="btn btn-primary"
+           href="https://github.com/NickZ79/java_projects/tree/main/NKZ_pizza_maker"
+           target="_blank" rel="noopener">View Source on GitHub →</a>
+      </div>
+    </header>
+
+    <!-- Screenshots -->
+    <section class="section">
+      <h2>Screenshots</h2>
+      <div class="grid cols-3" style="margin-top:12px;">
+        <div class="card">
+          <h3>PizzaMaker Class</h3>
+          <img src="../../images/java/pizza/PizzaMaker.jpg" alt="Screenshot of the PizzaMaker Java class in VS Code." />
+          <p class="muted">Core logic that accepts a list of ingredients and a delivery flag, then returns a fully built pizza object.</p>
+        </div>
+        <div class="card">
+          <h3>Ingredient Hierarchy</h3>
+          <img src="../../images/java/pizza/Ingredient.jpg" alt="Screenshot of the Ingredient base class in Java." />
+          <p class="muted">Base <code>Ingredient</code> class used by concrete ingredients such as cheese, meats, and vegetables.</p>
+        </div>
+        <div class="card">
+          <h3>Pepperoni Ingredient</h3>
+          <img src="../../images/java/pizza/IngredientPepperoni.jpg" alt="Screenshot of a Pepperoni ingredient class in Java." />
+          <p class="muted">Example of a specific ingredient subclass with its own description and cost.</p>
+        </div>
+      </div>
+
+      <div class="grid cols-3" style="margin-top:18px;">
+        <div class="card">
+          <h3>PizzaMaker Test Code</h3>
+          <img src="../../images/java/pizza/PizzaMakerTest.jpg" alt="Screenshot of the PizzaMaker test logic in Java." />
+          <p class="muted">Original JUnit-style tests later adapted into a custom test runner for easier execution without external libraries.</p>
+        </div>
+        <div class="card">
+          <h3>Test Runner Output</h3>
+          <img src="../../images/java/pizza/PizzaTestResults.jpg" alt="Screenshot of PizzaMaker test runner console output." />
+          <p class="muted">Console output showing the results of multiple pizza combinations being tested for cost and delivery flags.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Overview / Design -->
+    <section class="section">
+      <h2>Project Overview</h2>
+      <p>
+        The goal of this assignment was to practice object-oriented design in Java by modeling a pizza builder.
+        The program uses an <code>Ingredient</code> abstraction along with concrete classes for cheese, meat,
+        and vegetable toppings. The <code>PizzaMaker</code> class coordinates ingredient selection, delivery options,
+        and final price calculation.
+      </p>
+      <p>
+        Instead of hard-coding every pizza, the program builds pizzas dynamically from a list of ingredients.
+        This makes it easy to adjust or add new ingredients in the future, and it reflects how composition can be used
+        to model real-world items.
+      </p>
+    </section>
+
+    <!-- Code Highlight -->
+    <section class="section">
+      <h2>Key Logic (Pricing &amp; Composition)</h2>
+      <p class="muted">A simplified example of how the pizza is assembled and priced:</p>
+      <pre><code>public class PizzaMaker {
+
+    public Pizza makePizza(List&lt;Ingredient&gt; ingredients, boolean delivery) {
+        double total = 0.0;
+        for (Ingredient ingredient : ingredients) {
+            total += ingredient.getCost();
+        }
+
+        if (delivery) {
+            total += 3.0; // delivery fee
+        }
+
+        Pizza pizza = new Pizza();
+        pizza.setIngredients(ingredients);
+        pizza.setTotalCost(total);
+        pizza.setDeliveryYn(delivery);
+
+        return pizza;
+    }
+}</code></pre>
+      <p class="muted">
+        The real project uses the concrete ingredient classes, but this snippet highlights the overall approach:
+        iterate ingredients, sum costs, add delivery, and return a composed <code>Pizza</code> object.
+      </p>
+    </section>
+
+    <!-- What I Learned -->
+    <section class="section">
+      <h2>What I Learned</h2>
+      <ul class="qa-list">
+        <li>How to design and structure an object-oriented program in Java using composition and inheritance.</li>
+        <li>How to represent real-world concepts (toppings, pizza, delivery) as classes and objects.</li>
+        <li>How to create a small test harness to validate logic without relying on external frameworks.</li>
+        <li>How to organize a Java project so it’s easy to understand on GitHub and run locally.</li>
+      </ul>
+    </section>
+
+    <!-- CTA -->
+    <section class="section" style="text-align:center;">
+      <h2>Explore the Code</h2>
+      <p class="lead">
+        You can view the full source, including all ingredient classes and the test runner, in the GitHub repository.
+      </p>
+      <div class="cta" style="margin-top:10px;">
+        <a class="btn btn-primary"
+           href="https://github.com/NickZ79/java-projects/tree/main/NKZ_pizza_maker"
+           target="_blank" rel="noopener">View on GitHub →</a>
+        <a class="btn btn-ghost" href="../../index.html#school-projects">Back to School Projects</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="foot-inner">
+      <span>© <span id="year"></span> Nicholas Zastrow</span>
+      <div class="links">
+        <a href="../../index.html">Portfolio</a>
+        <a href="#top" onclick="window.scrollTo({top:0, behavior:'smooth'}); return false;">Top</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

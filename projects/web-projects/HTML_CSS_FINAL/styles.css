@@ -1,0 +1,133 @@
+/* General Reset */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Page-specific Backgrounds */
+body:not(.index-page):not(.brindlewood-bay) {
+    background-image: url('./images/stranger.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white; /* Text color for non-index and non-Brindlewood Bay pages */
+}
+
+body.index-page {
+    background-color: #f4f4f4; /* Default light grey for the index page */
+}
+
+body.brindlewood-bay {
+    background-color: #f4f4f4; /* Retains light grey for Brindlewood Bay */
+    color: #333; /* Default text color for Brindlewood Bay */
+}
+
+/* Header Styles */
+header {
+    background: #3e4a61;
+    color: white;
+    padding: 0;
+    position: relative;
+}
+
+header .banner {
+    background-image: url('./images/banner.webp');
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+header .banner h1 {
+    margin: 0;
+    font-size: 36px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+header nav {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px 0;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+header nav ul li {
+    display: inline;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #ffd700;
+}
+
+/* Main Content Styles */
+main {
+    padding: 20px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.intro {
+    text-align: center;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.featured {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+
+.featured iframe {
+    width: 100%;
+    height: 315px;
+    border: none;
+}
+
+/* Footer Styles */
+footer {
+    background: #3e4a61;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+footer a {
+    color: #ffd700;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

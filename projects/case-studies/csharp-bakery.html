@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C# Bakery Shop Case Study — Nicholas Zastrow</title>
+  <meta name="description" content="C# Bakery Shop order form case study by Nicholas Zastrow — Windows Forms subtotal, tax, discount, and total calculation." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css" />
+</head>
+
+<body>
+  <nav class="nav scrolled">
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="logo">NZ</div>
+        <a href="../../index.html">Back to Portfolio</a>
+      </div>
+      <div class="nav-links">
+        <a href="../../index.html#school-projects">School Projects</a>
+        <a href="csharp-pizza-order.html">Pizza Order Form</a>
+        <a href="javascript:void(0)" onclick="window.scrollTo({top:0, behavior:'smooth'});">Top</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container" style="padding-top:90px; padding-bottom:40px;">
+    <header class="section">
+      <span class="kicker">C# Case Study</span>
+      <h1 class="title-xl">Bakery Shop — Order Form Calculator</h1>
+      <p class="lead">
+        A Windows Forms application that calculates order subtotals for bakery items, applies sales tax and an
+        optional discount, and displays the final total. The form also supports clearing the order so a new
+        transaction can be started quickly.
+      </p>
+      <div class="cta" style="margin-top:14px;">
+        <a class="btn btn-primary"
+           href="https://github.com/NickZ79/Csharp_Projects/tree/main/Bakery_Shop_Project"
+           target="_blank" rel="noopener">View Source on GitHub →</a>
+      </div>
+    </header>
+
+    <!-- Screenshots -->
+    <section class="section">
+      <h2>Screenshots</h2>
+      <div class="grid cols-3" style="margin-top:12px;">
+        <div class="card">
+              <h3>Code-Behind</h3>
+          <img src="../../images/csharp/bakery/BakeryOrderForm Code.jpg" alt="Screenshot of Bakery order form C# code-behind." />
+          <p class="muted">Event handlers and calculation logic that respond to button clicks and input changes.</p>
+        </div>
+        <div class="card">
+          <h3>Form Designer</h3>
+          <img src="../../images/csharp/bakery/BakeryOrderForm Designer Code.jpg" alt="Screenshot of Bakery order form designer code in C#." />
+          <p class="muted">Designer-generated layout code defining labels, text boxes, buttons, and group boxes.</p>
+        </div>
+        <div class="card">
+          <h3>Completed Order Example</h3>
+          <img src="../../images/csharp/bakery/BakeryOrderForm.jpg" alt="Bakery order form with example values showing subtotal, tax, discount and total." />
+          <p class="muted">An example test run showing the form filled out with sample items and a calculated total.</p>
+        </div>
+      </section>
+
+    <!-- Overview -->
+    <section class="section">
+      <h2>Project Overview</h2>
+      <p>
+        This assignment focused on building a basic point-of-sale style order form in C# Windows Forms.
+        The user selects one or more bakery items, and the application calculates the subtotal based on
+        quantity and price. A sales tax rate is applied, and an optional discount can be toggled on or off.
+        The final total is then displayed for the customer.
+      </p>
+      <p>
+        In addition to the calculation logic, the form includes a clear/reset function. This makes it easy
+        to reuse the same form for multiple customers without closing and reopening the application.
+      </p>
+    </section>
+
+    <!-- Code Highlight -->
+    <section class="section">
+      <h2>Key Logic (Subtotal, Tax &amp; Discount)</h2>
+      <p class="muted">A simplified example of how the cost calculation is handled:</p>
+      <pre><code>private void btnCalculate_Click(object sender, EventArgs e)
+{
+    decimal subtotal = 0m;
+
+    // Example of item checks (actual project uses specific controls and prices)
+    if (chkDonut.Checked)
+        subtotal += DONUT_PRICE * nudDonutQuantity.Value;
+
+    if (chkCookie.Checked)
+        subtotal += COOKIE_PRICE * nudCookieQuantity.Value;
+
+    decimal tax = subtotal * TAX_RATE;
+
+    decimal discount = 0m;
+    if (chkDiscount.Checked)
+        discount = subtotal * DISCOUNT_RATE;
+
+    decimal total = subtotal + tax - discount;
+
+    txtSubtotal.Text = subtotal.ToString("C");
+    txtTax.Text      = tax.ToString("C");
+    txtDiscount.Text = discount.ToString("C");
+    txtTotal.Text    = total.ToString("C");
+}</code></pre>
+      <p class="muted">
+        The real code uses the specific controls created for the project, but this snippet shows the core idea:
+        gather selected items, calculate subtotal, apply tax and optional discount, then format the results as
+        currency for display.
+      </p>
+    </section>
+
+    <!-- What I Learned -->
+    <section class="section">
+      <h2>What I Learned</h2>
+      <ul class="qa-list">
+        <li>How to build a basic order-entry workflow using C# Windows Forms.</li>
+        <li>How to handle button click events and update the UI in response to user input.</li>
+        <li>How to perform subtotal, tax, and discount calculations in a clear, maintainable way.</li>
+        <li>How to format numeric output as currency and reset a form for the next transaction.</li>
+      </ul>
+    </section>
+
+    <!-- CTA -->
+    <section class="section" style="text-align:center;">
+      <h2>Explore the Code</h2>
+      <p class="lead">
+        You can review the full implementation, including all controls, events, and calculation logic,
+        in the GitHub repository.
+      </p>
+      <div class="cta" style="margin-top:10px;">
+        <a class="btn btn-primary"
+           href="https://github.com/NickZ79/C-Projects/tree/main/Bakery_Shop_Project"
+           target="_blank" rel="noopener">View on GitHub →</a>
+        <a class="btn btn-ghost" href="../../index.html#school-projects">Back to School Projects</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="foot-inner">
+      <span>© <span id="year"></span> Nicholas Zastrow</span>
+      <div class="links">
+        <a href="../../index.html">Portfolio</a>
+        <a href="#top" onclick="window.scrollTo({top:0, behavior:'smooth'}); return false;">Top</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

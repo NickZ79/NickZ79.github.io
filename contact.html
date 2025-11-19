@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — Nicholas Zastrow</title>
+  <meta name="description" content="Contact Nicholas Zastrow for QA roles, web design, or collaborative software projects." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- NAV -->
+  <nav class="nav scrolled">
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="logo">NZ</div>
+        <a href="index.html">Back to Portfolio</a>
+      </div>
+      <div class="nav-links">
+        <a href="index.html#home">Home</a>
+        <a href="QA Work/QA Work.html">QA Work</a>
+        <a href="index.html#school-projects">School Projects</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container" style="padding-top:90px; padding-bottom:40px;">
+
+    <!-- Intro -->
+    <section class="section">
+      <span class="kicker">Get in Touch</span>
+      <h1 class="title-xl">Contact Nicholas Zastrow</h1>
+      <p class="lead">
+        I’m currently open to a few different types of opportunities:
+      </p>
+      <ul class="qa-list">
+        <li><strong>Part-time or contract work in Software QA</strong> while I complete my degree (target graduation: December 2026).</li>
+        <li><strong>Freelance website design</strong> — especially portfolio sites, small business sites, and TTRPG or game-related pages.</li>
+        <li><strong>Collaborative software projects</strong> with other developers, focused on:
+          <ul>
+            <li>TTRPG tools and experiences,</li>
+            <li>Educational or socially beneficial software,</li>
+            <li>Small indie games and experimental projects — not just maximising profit margins.</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="section">
+      <h2>Send a Message</h2>
+      <p class="muted">
+        Fill out the form below and I’ll get back to you within <strong>72 hours</strong>.
+      </p>
+
+      <form id="contactForm" class="section" novalidate>
+        <label for="firstName">First Name</label>
+        <input id="firstName" name="firstName" class="input" type="text" required />
+
+        <label for="email">Contact Email</label>
+        <input id="email" name="email" class="input" type="email" required />
+
+        <label for="message">Message (max 500 characters)</label>
+        <textarea id="message" name="message" class="textarea" rows="6" maxlength="500" required></textarea>
+
+        <p id="formError" class="muted" style="color:#b00020; margin-top:4px;"></p>
+        <p id="formSuccess" class="muted" style="color:#0b7a34; margin-top:4px;"></p>
+
+        <div class="cta" style="margin-top:10px;">
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="foot-inner">
+      <span>© <span id="year"></span> Nicholas Zastrow</span>
+      <div class="links">
+        <a href="index.html">Portfolio</a>
+        <a href="#top" onclick="window.scrollTo({top:0, behavior:'smooth'}); return false;">Top</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Contact form logic
+    const form = document.getElementById('contactForm');
+    const errorEl = document.getElementById('formError');
+    const successEl = document.getElementById('formSuccess');
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const firstName = document.getElementById('firstName').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      errorEl.textContent = '';
+      successEl.textContent = '';
+
+      // Basic validation
+      if (!firstName || !email || !message) {
+        errorEl.textContent = 'All fields must be completed before sending.';
+        return;
+      }
+
+      if (message.length > 500) {
+        errorEl.textContent = 'Your message is too long. Please keep it under 500 characters.';
+        return;
+      }
+
+      // Build mailto link
+      const subject = `Portfolio Contact from ${firstName}`;
+      const body =
+        `Name: ${firstName}\n` +
+        `Email: ${email}\n\n` +
+        `Message:\n${message}`;
+
+      const mailtoLink =
+        'mailto:nkzastrow.dev@gmail.com' +
+        '?subject=' + encodeURIComponent(subject) +
+        '&body=' + encodeURIComponent(body);
+
+      // Open default mail client with pre-filled email
+      window.location.href = mailtoLink;
+
+      // Show success message on the page
+      successEl.textContent = 'Thank you for reaching out! I will contact you within 72 hours.';
+      form.reset();
+    });
+  </script>
+</body>
+</html>

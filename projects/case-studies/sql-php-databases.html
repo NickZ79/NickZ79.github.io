@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SQL Databases & PHP/MySQL Case Study — Nicholas Zastrow</title>
+  <meta name="description" content="Case study for SQL database design and PHP/MySQL projects by Nicholas Zastrow — relational modeling, queries, and server-side integration." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css" />
+</head>
+
+<body>
+  <nav class="nav scrolled">
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="logo">NZ</div>
+        <a href="../../index.html">Back to Portfolio</a>
+      </div>
+      <div class="nav-links">
+        <a href="../../index.html#school-projects">School Projects</a>
+        <a href="javascript:void(0)" onclick="window.scrollTo({top:0, behavior:'smooth'});">Top</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container" style="padding-top:90px; padding-bottom:40px;">
+    <!-- Header -->
+    <header class="section">
+      <span class="kicker">SQL &amp; PHP Case Study</span>
+      <h1 class="title-xl">SQL Databases &amp; PHP/MySQL Projects</h1>
+      <p class="lead">
+        A pair of projects that focus on designing relational databases in SQL and connecting them
+        to dynamic web pages using PHP and MySQL. Together, they show how data moves from schema and
+        queries to real-world web applications.
+      </p>
+      <div class="cta" style="margin-top:14px; flex-wrap:wrap;">
+        <a class="btn btn-primary"
+           href="https://github.com/NickZ79/SQL_Database_projects"
+           target="_blank" rel="noopener">View SQL Projects on GitHub →</a>
+        <a class="btn btn-ghost"
+           href="https://github.com/NickZ79/PHP_MYSQL_projects"
+           target="_blank" rel="noopener">View PHP/MySQL Projects on GitHub →</a>
+      </div>
+    </header>
+
+    <!-- SQL DATABASE PROJECTS -->
+    <section class="section">
+      <h2>SQL Database Projects — Family Reunion Database</h2>
+      <p>
+        The SQL portion of this case study centers on a <strong>Family Reunion</strong> database. The goal was to
+        design a relational schema that could track family members, contact information, event details, and RSVP
+        data in a way that remained flexible, normalized, and easy to query.
+      </p>
+
+      <div class="grid cols-3" style="margin-top:12px;">
+        <div class="card">
+          <h3>Schema Definition</h3>
+          <img src="../../images/SQL/FamilyReunionSchemaCode.jpg" alt="Family reunion SQL schema definition code screenshot." />
+          <p class="muted">
+            SQL DDL for creating tables, primary keys, and foreign key relationships between family members,
+            addresses, events, and RSVP records.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Sample Data</h3>
+          <img src="../../images/SQL/FamilyReunionDataCode.jpg" alt="Insert statements for family reunion database sample data." />
+          <p class="muted">
+            Insert statements populate the database with realistic test data so joins and aggregate queries
+            can be exercised.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Queries &amp; Reports</h3>
+          <img src="../../images/SQL/FamilyReunionQuerie.jpg" alt="Select queries running against the family reunion database." />
+          <p class="muted">
+            Queries that answer real questions: who’s attending which events, dietary restrictions, and
+            roll-up counts for planning.
+          </p>
+        </div>
+      </div>
+
+      <p style="margin-top:18px;">
+        These scripts were later adapted to SQLite so the database could be demoed easily without requiring
+        a full SQL Server instance. The structure stayed the same: strong relational design with clear keys
+        and constraints.
+      </p>
+    </section>
+
+    <!-- PHP / MYSQL PROJECTS -->
+    <section class="section">
+      <h2>PHP/MySQL Projects — Dynamic Web Integration</h2>
+      <p>
+        The PHP/MySQL projects build on the database fundamentals by connecting web front ends to a MySQL
+        backend. The assignments focused on <strong>retrieving data from the database</strong>, displaying it in
+        styled HTML tables, and performing basic calculations with reusable PHP functions and classes.
+      </p>
+
+      <div class="grid cols-3" style="margin-top:12px;">
+        <div class="card">
+          <h3>Main Application View</h3>
+          <img src="../../images/PHP_MYSQL/screenshot.jpg" alt="Screenshot of a PHP page showing account information in a table." />
+          <p class="muted">
+            A browser view of account data rendered from PHP. Data is pulled from objects or database
+            records and displayed in a clean HTML table.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Midterm Code (Accounts &amp; Customers)</h3>
+          <img src="../../images/PHP_MYSQL/MidTermCode1.jpg" alt="Screenshot of PHP midterm code using Account and Customer classes." />
+          <p class="muted">
+            PHP classes and setup code for accounts and customers, including helper functions to format
+            currency and compute totals.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Midterm Code (Output &amp; Table)</h3>
+          <img src="../../images/PHP_MYSQL/MidTermCode2.jpg" alt="Screenshot of PHP midterm code generating HTML output." />
+          <p class="muted">
+            Logic that loops through account data and builds the HTML table output, echoing values in a
+            way that stays readable and maintainable.
+          </p>
+        </div>
+      </div>
+
+      <p style="margin-top:18px;">
+        These projects emphasized keeping presentation and logic reasonably separated: PHP classes and helper
+        functions handle the calculations, while small templates generate the HTML. The end result is more
+        reusable than mixing everything into a single monolithic script.
+      </p>
+    </section>
+
+    <!-- Code Highlight -->
+    <section class="section">
+      <h2>Key Logic (PHP Loop &amp; Formatting)</h2>
+      <p class="muted">A simplified example of how PHP walks account data and formats it for display:</p>
+      <pre><code>// accounts array created earlier
+$total = 0;
+
+foreach ($customer-&gt;accounts as $account) {
+    $total += $account-&gt;balance;
+    echo "&lt;tr&gt;";
+    echo "&lt;td&gt;" . $account-&gt;number . "&lt;/td&gt;";
+    echo "&lt;td&gt;" . $account-&gt;type . "&lt;/td&gt;";
+    echo "&lt;td&gt;" . formatCurrency($account-&gt;balance) . "&lt;/td&gt;";
+    echo "&lt;/tr&gt;";
+}
+
+echo "&lt;tr&gt;&lt;td colspan='2'&gt;&lt;strong&gt;Total&lt;/strong&gt;&lt;/td&gt;";
+echo "&lt;td&gt;&lt;strong&gt;" . formatCurrency($total) . "&lt;/strong&gt;&lt;/td&gt;&lt;/tr&gt;";</code></pre>
+      <p class="muted">
+        The real project also pulls in includes, classes, and configuration, but this snippet captures the
+        essence: loop over records, keep a running total, and use a helper to ensure currency is consistently
+        formatted.
+      </p>
+    </section>
+
+    <!-- What I Learned -->
+    <section class="section">
+      <h2>What I Learned</h2>
+      <ul class="qa-list">
+        <li>How to design relational schemas that support real-world use cases and meaningful queries.</li>
+        <li>How to write SQL that joins multiple tables, filters results, and produces useful reports.</li>
+        <li>How to connect PHP pages to structured data, whether from objects or database queries.</li>
+        <li>How to separate formatting and calculation logic so PHP views stay more maintainable.</li>
+        <li>How to think through the full flow: from schema and data to dynamic, user-facing web output.</li>
+      </ul>
+    </section>
+
+    <!-- CTA -->
+    <section class="section" style="text-align:center;">
+      <h2>Explore the Repositories</h2>
+      <p class="lead">
+        You can review the full SQL scripts and PHP/MySQL code, including additional exercises and variations,
+        in the GitHub repositories.
+      </p>
+      <div class="cta" style="margin-top:10px; flex-wrap:wrap;">
+        <a class="btn btn-primary"
+           href="https://github.com/NickZ79/SQL_Database_projects"
+           target="_blank" rel="noopener">SQL Projects on GitHub →</a>
+        <a class="btn btn-ghost"
+           href="https://github.com/NickZ79/PHP_MYSQL_projects"
+           target="_blank" rel="noopener">PHP/MySQL Projects on GitHub →</a>
+        <a class="btn btn-ghost" href="../../index.html#school-projects">Back to School Projects</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="foot-inner">
+      <span>© <span id="year"></span> Nicholas Zastrow</span>
+      <div class="links">
+        <a href="../../index.html">Portfolio</a>
+        <a href="#top" onclick="window.scrollTo({top:0, behavior:'smooth'}); return false;">Top</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

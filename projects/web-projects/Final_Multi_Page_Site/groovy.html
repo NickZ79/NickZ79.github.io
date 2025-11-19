@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nicholas Zastrow | Home</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="modernizr.custom.05819.js"></script>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <div class="nav-logo">
+      <img src="TwinRavens.jpg" alt="Site Logo">
+      <span>Nicholas Zastrow</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ttrpg.html">TTRPGs</a></li>
+      <li><a href="groovy.html">Groovy</a></li>
+      <li><a href="qa.html">QA Work</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <h1>Classic vs. Modern: Evil Dead</h1>
+
+        <section>
+      <h2>Overview</h2>
+      <p><strong>The Evil Dead (1981):</strong> Directed by Sam Raimi, this cult classic introduced audiences to Ash Williams and the Necronomicon. Known for its over-the-top gore and practical effects, it set the tone for horror-comedy hybrids that followed.</p>
+      <p><strong>Evil Dead (2013):</strong> Directed by Fede Álvarez, this modern reboot is darker, more serious, and focused on psychological horror and brutal gore. Though it lacks Ash, it honors the original's spirit while updating its style for a new generation.</p>
+    </section>
+
+    <section style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 20px;">
+      <figure style="max-width: 250px;">
+        <img src="EvilDead.jpg" alt="The Evil Dead (1981) poster" style="width: 100%; border-radius: 8px;">
+        <figcaption style="text-align: center; font-size: 0.9em; margin-top: 8px;">Poster from the original Evil Dead (1981)</figcaption>
+      </figure>
+      <figure style="max-width: 250px;">
+        <img src="EvilDead2013.jpg" alt="Evil Dead (2013) poster" style="width: 100%; border-radius: 8px;">
+        <figcaption style="text-align: center; font-size: 0.9em; margin-top: 8px;">DVD box from the Evil Dead remake (2013)</figcaption>
+      </figure>
+    </section>
+  </main>
+
+  <section>
+    <div class="centered-box">
+        <h2>Choose Your Favorite Evil Dead</h2>
+        <p>Pick which version of Evil Dead you prefer to get a quick opinion!</p>
+        <label for="versionSelect">Select Version:</label>
+        <select id="versionSelect">
+          <option value="">--Please choose--</option>
+          <option value="original">The Original (1981)</option>
+          <option value="remake">The Remake (2013)</option>
+          <option value="both">I love both!</option>
+        </select>
+        <button onclick="compareMovies()">Submit</button>
+        <p id="response"></p>
+        </form>
+        <img src="EVD2.jpg" alt="Groovy" class="groovy-img">
+      </div>
+      
+  </section>
+
+  <script>
+    function compareMovies() {
+      const choice = document.getElementById("versionSelect").value;
+      let response = "";
+
+      if (choice === "original") {
+        response = "Classic choice! The original is a low-budget masterpiece with tons of charm.";
+      } else if (choice === "remake") {
+        response = "You appreciate modern horror! The 2013 version is a terrifying reimagining.";
+      } else if (choice === "both") {
+        response = "Best of both worlds! You enjoy the roots and the evolution of the franchise.";
+      } else {
+        response = "Please select a version to get a response.";
+      }
+
+      document.getElementById("response").textContent = response;
+    }
+  </script>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Nicholas Zastrow | <a href="mailto:nick.zastrow@sagenverse.com">Contact</a></p>
+  </footer>
+</body>
+</html>

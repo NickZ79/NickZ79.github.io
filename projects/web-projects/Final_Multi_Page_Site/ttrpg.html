@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nicholas Zastrow | Home</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="modernizr.custom.05819.js"></script>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <div class="nav-logo">
+      <img src="TwinRavens.jpg" alt="Site Logo">
+      <span>Nicholas Zastrow</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ttrpg.html">TTRPGs</a></li>
+      <li><a href="groovy.html">Groovy</a></li>
+      <li><a href="qa.html">QA Work</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <h1>The TTRPG Community</h1>
+
+    <section class="personal-journey">
+      <h2>My Journey with TTRPGs</h2>
+      <p>I started playing tabletop role-playing games in 2020 during the pandemic. I play mostly online with a group of friends from Michigan and Ohio. I began with Dungeons & Dragons 5th Edition, enjoying classic fantasy adventures, but have branched out to explore other systems and genres. About three years ago, I started running games as the game master, and now I spend most of my TTRPG time in that role. Currently, I'm running a game inspired by Murder She Wrote and Golden Girls, blended with cosmic horror and detective elements—a cozy-meets-eldritch mystery experience.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 20px;">
+        <figure style="max-width: 300px;">
+          <img src="OGCharacter.jpg" alt="Hyperborea character sheet" style="width: 100%; border-radius: 8px;">
+          <figcaption style="text-align: center; font-size: 0.9em; margin-top: 8px;">One of the first characters I created</figcaption>
+        </figure>
+        <figure style="max-width: 300px;">
+          <img src="currentgame.jpg" alt="Brindlewood Bay game cover" style="width: 100%; border-radius: 8px;">
+          <figcaption style="text-align: center; font-size: 0.9em; margin-top: 8px;">Cover from my current game: Brindlewood Bay</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="community-history">
+      <h2>Roots of the TTRPG Community</h2>
+      <p>The tabletop role-playing game (TTRPG) community traces its roots back to the 1970s, with the release of <em>Dungeons & Dragons</em> (D&D) by Gary Gygax and Dave Arneson. This revolutionary game combined storytelling, strategy, and character creation in a collaborative experience that was unlike anything seen before. Early adopters were primarily fans of wargaming and fantasy literature, drawn to the imaginative freedom D&D offered. As other systems like <em>Call of Cthulhu</em>, <em>Shadowrun</em>, and <em>Traveller</em> emerged in subsequent decades, they expanded the genre to encompass a variety of themes, from science fiction to horror and beyond. During this time, the TTRPG community largely existed in small, niche groups, often meeting in basements, game stores, or conventions.</p>
+    </section>
+
+    <section class="modern-growth">
+      <h2>Modern Growth and Online Expansion</h2>
+      <p>In the 21st century, the TTRPG community has grown exponentially, driven by the internet, streaming platforms, and social media. Shows like <em>Critical Role</em>, <em>Dimension 20</em>, and <em>The Adventure Zone</em> have brought TTRPGs into mainstream consciousness, drawing millions of viewers and inspiring a new generation of players. Online tools such as Roll20, D&D Beyond, and Foundry VTT have made it easier than ever for people to connect and play remotely, breaking down geographical barriers. The rise of crowdfunding platforms has also empowered creators to launch innovative TTRPG systems and supplements, enriching the diversity of available games. These developments have turned TTRPGs into a global phenomenon, with players of all ages and backgrounds.</p>
+    </section>
+
+    <section class="inclusivity">
+      <h2>Inclusivity and Representation</h2>
+      <p>As the TTRPG community has expanded, it has also become more inclusive and welcoming. Earlier stereotypes about who could or should play these games have been challenged, with increasing representation of women, LGBTQ+ individuals, and people of color both at the gaming table and in game design. Publishers have made conscious efforts to create more diverse characters and settings, while online spaces have facilitated the growth of marginalized voices within the community. Initiatives such as safety tools, like the X-card and session zero discussions, have further helped create respectful and inclusive gaming environments. The result is a thriving, vibrant community that celebrates storytelling, collaboration, and creativity for everyone.</p>
+    </section>
+    <section class="dice-roller">
+      <h2>Roll a Die!</h2>
+      <p>Choose a die type and click Roll to see your result:</p>
+      <select id="diceType">
+        <option value="">--Select Die--</option>
+        <option value="6">D6</option>
+        <option value="20">D20</option>
+        <option value="100">D100</option>
+      </select>
+      <button onclick="rollDice()">Roll</button>
+      <p id="diceResult"></p>
+    </section>
+    <script>
+      function rollDice() {
+        const diceSelect = document.getElementById("diceType");
+        const resultDisplay = document.getElementById("diceResult");
+        const sides = parseInt(diceSelect.value);
+      
+        if (!sides) {
+          resultDisplay.textContent = "Please select a type of die to roll!";
+          resultDisplay.style.color = "red";
+        } else {
+          const roll = Math.floor(Math.random() * sides) + 1;
+          resultDisplay.textContent = "You rolled: " + roll;
+          resultDisplay.style.color = "green";
+        }
+      }
+      </script>
+      
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Nicholas Zastrow | <a href="mailto:nick.zastrow@sagenverse.com">Contact</a></p>
+  </footer>
+</body>
+</html>

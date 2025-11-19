@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nicholas Zastrow | Home</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="modernizr.custom.05819.js"></script>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <div class="nav-logo">
+      <img src="TwinRavens.jpg" alt="Site Logo">
+      <span>Nicholas Zastrow</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ttrpg.html">TTRPGs</a></li>
+      <li><a href="groovy.html">Groovy</a></li>
+      <li><a href="qa.html">QA Work</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <h1>Contact Me</h1>
+    <p>If you have questions, feedback, or just want to say hi, feel free to send a message using the form below.</p>
+
+    <form id="contactForm" onsubmit="return validateForm()">
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name"><br><br>
+
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email"><br><br>
+
+      <label for="message">Message:</label><br>
+      <textarea id="message" name="message" rows="6"></textarea><br><br>
+
+      <input type="submit" value="Submit">
+      <input type="reset" value="Reset">
+    </form>
+
+    <p id="formResponse" style="color: green; font-weight: bold; margin-top: 20px;"></p>
+  </main>
+
+  <script>
+    function validateForm() {
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+      const response = document.getElementById("formResponse");
+
+      if (!name || !email || !message) {
+        response.textContent = "All fields are required.";
+        response.style.color = "red";
+        return false;
+      }
+
+      // Simple email format check
+      if (!email.includes("@") || !email.includes(".")) {
+        response.textContent = "Please enter a valid email address.";
+        response.style.color = "red";
+        return false;
+      }
+
+      response.textContent = "Thank you for your message, " + name + "! I'll get back to you soon.";
+      response.style.color = "green";
+      return false; // Prevent actual form submission for demonstration
+    }
+  </script>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Nicholas Zastrow | <a href="mailto:nick.zastrow@sagenverse.com">Email Me</a></p>
+  </footer>
+</body>
+</html>
