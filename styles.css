@@ -230,4 +230,11 @@ footer { border-top: 1px solid var(--line); margin-top: 42px; }
 @media (prefers-reduced-motion: reduce) {
   .btn, .feature, .nav-links a { transition: none; }
 }
-  
+.kicker {
+  font-size: 12px;
+  color: #0b3b63;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 4px;
+}
