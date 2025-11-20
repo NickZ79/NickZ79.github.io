@@ -133,7 +133,7 @@ h1, h2, h3 { color: var(--panel); margin: 0 0 .3rem; }
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);       /* Gentle lift */
   padding: 24px;
 }
-.feature {
+.feature{
   background: rgba(200,200,200,.65);     /* visible panel */
   border: 1px solid var(--line);         /* visible border */
   border-radius: 14px;
@@ -164,6 +164,26 @@ h1, h2, h3 { color: var(--panel); margin: 0 0 .3rem; }
   margin-bottom: 8px;
   line-height: 1.25;
   min-height: 2.6em; 
+/* SQL/PHP card spacing tweaks */
+.sql-php-card .kicker {
+  margin-bottom: 2px;       /* same feel as other cards */
+}
+
+.sql-php-card .title {
+  display: block;
+  margin-bottom: 12px;      /* matches other titles */
+}
+
+/* Stack SQL/PHP buttons with consistent gaps */
+.sql-php-actions {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;  /* keeps them left-aligned like other cards */
+}
+
+
 }
 .grid {
   display: grid;
@@ -224,6 +244,7 @@ footer { border-top: 1px solid var(--line); margin-top: 42px; }
 .divider {
   color: rgba(0,0,0,0.35);
 }
+
 
 /* 10) Motion Preferences -------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
