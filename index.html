@@ -281,34 +281,30 @@
 
   <!-- Dynamic Footer (loaded from includes/footer.html) -->
   <div id="footer"></div>
-
   <!-- Include Loader Script -->
   <script>
-    const BASE = "./";
+  function loadPart(id, file) {
+    // Always load from the site root: /includes/header.html, /includes/footer.html
+    fetch("/includes/" + file)
+      .then(resp => resp.text())
+      .then(html => {
+        document.getElementById(id).innerHTML = html;
 
-    function loadPart(id, file) {
-      fetch(BASE + "includes/" + file)
-        .then(resp => resp.text())
-        .then(html => {
-          html = html.replace(/{{BASE}}/g, BASE);
-          const container = document.getElementById(id);
-          if (!container) return;
-          container.innerHTML = html;
-
-          if (id === "footer") {
-            const yearSpan = document.getElementById("year");
-            if (yearSpan) {
-              yearSpan.textContent = new Date().getFullYear();
-            }
+        // Keep the dynamic year in the footer
+        if (id === "footer") {
+          const yearSpan = document.getElementById("year");
+          if (yearSpan) {
+            yearSpan.textContent = new Date().getFullYear();
           }
-        })
-        .catch(err => console.error("Include load error for " + file, err));
-    }
+        }
+      })
+      .catch(err => console.error("Include load error for " + file, err));
+  }
 
-    document.addEventListener("DOMContentLoaded", () => {
-      loadPart("header", "header.html");
-      loadPart("footer", "footer.html");
-    });
+  document.addEventListener("DOMContentLoaded", () => {
+    loadPart("header", "header.html");
+    loadPart("footer", "footer.html");
+  });
   </script>
 </body>
 </html>

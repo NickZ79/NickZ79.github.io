@@ -330,26 +330,29 @@
     <!-- Dynamic Footer -->
   <div id="footer"></div>
 <!-- Loader Script (placed before any content for reliability) -->
-  <script>
-    const BASE = ".."; // QA Work lives in a subfolder
+<script>
+  function loadPart(id, file) {
+    // Always load from the site root: /includes/header.html, /includes/footer.html
+    fetch("/includes/" + file)
+      .then(resp => resp.text())
+      .then(html => {
+        document.getElementById(id).innerHTML = html;
 
-    function loadPart(id, file) {
-      fetch(BASE + "/includes/" + file)
-        .then(r => r.text())
-        .then(html => {
-          html = html.replace(/{{BASE}}/g, BASE);
-          document.getElementById(id).innerHTML = html;
-
-          // Footer year update
-          if (id === "footer") {
-            const y = document.getElementById("year");
-            if (y) y.textContent = new Date().getFullYear();
+        // Keep the dynamic year in the footer
+        if (id === "footer") {
+          const yearSpan = document.getElementById("year");
+          if (yearSpan) {
+            yearSpan.textContent = new Date().getFullYear();
           }
-        })
-        .catch(err => console.error("Include load error:", file, err));
-    }
+        }
+      })
+      .catch(err => console.error("Include load error for " + file, err));
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
     loadPart("header", "header.html");
     loadPart("footer", "footer.html");
-  </script>
+  });
+</script>
 </body>
 </html>
