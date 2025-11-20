@@ -265,3 +265,39 @@ footer { border-top: 1px solid var(--line); margin-top: 42px; }
   display: block;
   margin-bottom: 2px;
 }
+/* 11) Mobile navigation tweaks ---------------------------------- */
+@media (max-width: 700px) {
+  .nav {
+    padding: 6px 0;
+  }
+
+  .nav-inner {
+    flex-direction: column;      /* stack brand + links */
+    align-items: flex-start;
+    gap: 6px;
+    padding: 6px 16px;
+  }
+
+  .brand {
+    font-size: 0.9rem;           /* slightly smaller name text */
+  }
+
+  .brand .logo {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+
+  .nav-links {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;             /* let links wrap to a second line */
+    gap: 6px 12px;
+    font-size: 0.9rem;           /* slightly smaller link text */
+  }
+
+  .nav-links a {
+    margin: 0;                   /* remove big desktop gap */
+    padding: 4px 0;
+  }
+}
