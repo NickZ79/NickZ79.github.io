@@ -56,47 +56,87 @@ h1, h2, h3 { color: var(--panel); margin: 0 0 .3rem; }
   font-family: 'Orbitron', sans-serif; font-weight: 700;
   font-size: clamp(32px, 4vw, 46px); line-height: 1.2;
 }
-
 /* 5) Nav ------------------------------------------------------------------ */
 .nav {
-  position: static; z-index: 100;
+  position: static;
+  z-index: 100;
   transition: background-color .4s ease, box-shadow .4s ease, border-color .4s ease;
-  background-color: transparent; border-bottom: 1px solid transparent;
+  background-color: transparent;
+  border-bottom: 1px solid transparent;
 }
+
 .nav.scrolled {
   background: linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,.65));
-  border-bottom: 1px solid var(--line); box-shadow: 0 2px 8px rgba(0,0,0,.08);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
 }
-.nav-inner { max-width: var(--maxw); margin-inline: auto; display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; }
 
+/* Full-width bar, brand on the far left, links on the far right */
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 100%;        /* use full browser width */
+  padding: 10px 24px;     /* adjust these for how close to the edges you want */
+}
 
+/* Brand (logo + name) pinned to the left */
 .brand {
   display: flex;
   align-items: center;
-  gap: 8px;          /* or whatever you had before */
-  font-size: 0.9rem;
-  margin-left: -110px;     /* shift logo/name left */
- 
+  gap: 10px;
+  margin: 0;
+  flex-shrink: 0;
 }
 
+/* Logo pill */
 .brand .logo {
-  width: 32px;
-  height: 32px;
-  font-size: 1rem;
+  width: 50px;
+  height: 50px;
+  font-size: 1.35rem;
 }
 
-.logo {
-  width: 38px; height: 38px; border-radius: 12px; display: grid; place-items: center;
-  font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 18px; color: #0C1220;
-  background: linear-gradient(135deg, var(--acc-1), var(--acc-2));
-  box-shadow: 0 0 18px rgba(58,180,242,.25), 0 0 42px rgba(139,128,249,.12);
+/* Right-side navigation links */
+.nav-links {
+  display: flex;
+  gap: 24px;
+  margin-left: auto;      /* pushes the group to the far right */
+  align-items: center;
 }
-.nav-links { display: flex; gap: 18px; align-items: center; }
+
+/* Link styling */
 .nav-links a {
-  padding: 8px 12px; border-radius: 10px;
-  transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease;
+  font-size: 1.05rem;
+  padding: 8px 12px;
+  border-radius: 10px;
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease,
+    background-color .2s ease;
 }
-.nav-links a:hover { background: rgba(58,180,242,.15); box-shadow: var(--shadow); transform: translateY(-1px); }
+
+.nav-links a:hover {
+  background: rgba(58,180,242,.15);
+  box-shadow: var(--shadow);
+  transform: translateY(-1px);
+}
+
+/* Re-use your existing logo style */
+.logo {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #0C1220;
+  background: linear-gradient(135deg, var(--acc-1), var(--acc-2));
+  box-shadow:
+    0 0 18px rgba(58,180,242,.25),
+    0 0 42px rgba(139,128,249,.12);
+}
 
 /* 6) Hero ----------------------------------------------------------------- */
 .hero {
@@ -289,18 +329,18 @@ footer { border-top: 1px solid var(--line); margin-top: 42px; }
 /* Mobile navigation tweaks ---------------------------------- */
 @media (max-width: 700px) {
   .nav {
-    padding: 6px 0;
+    padding: 4px 0;
   }
 
   .nav-inner {
-    flex-direction: column;      /* stack brand + links */
-    align-items: flex-start;
-    gap: 6px;
-    padding: 6px 16px;
+    max-width: 100%;
+    padding: 8px 12px;
+    flex-wrap: wrap;          /* allow wrapping instead of strict column */
+    row-gap: 6px;
   }
 
   .brand {
-    font-size: 0.9rem;           /* slightly smaller name text */
+    font-size: 0.95rem;
   }
 
   .brand .logo {
@@ -311,15 +351,15 @@ footer { border-top: 1px solid var(--line); margin-top: 42px; }
 
   .nav-links {
     width: 100%;
-    display: flex;
-    flex-wrap: wrap;             /* let links wrap to a second line */
+    justify-content: flex-end; /* keep links toward the right edge */
+    flex-wrap: wrap;
     gap: 6px 12px;
-    font-size: 0.9rem;           /* slightly smaller link text */
   }
 
   .nav-links a {
-    margin: 0;                   /* remove big desktop gap */
-    padding: 4px 0;
+    font-size: 0.95rem;
+    padding: 4px 6px;
   }
 }
+
 
