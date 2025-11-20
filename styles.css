@@ -118,7 +118,7 @@ h1, h2, h3 { color: var(--panel); margin: 0 0 .3rem; }
 .btn-primary:hover { transform: translateY(-2px); }
 .btn-ghost { background: rgba(255,255,255,.6); border-color: var(--line); color: var(--panel); }
 .btn-ghost:hover { background: rgba(255,255,255,.8); }
-.cta { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
+.cta { display:flex; justify-content:center; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
 
 /* 7) Cards/Grid (for sections) ------------------------------------------- */
 .section { padding: 40px 0; }
@@ -150,9 +150,6 @@ h1, h2, h3 { color: var(--panel); margin: 0 0 .3rem; }
     border-color .2s ease,
     box-shadow .2s ease;
 }
-
-
-
 .feature:hover {
   transform: translateY(-2px);          /* keep the tiny lift if you like */
   background: transparent;              /* lose the background */
@@ -168,8 +165,6 @@ h1, h2, h3 { color: var(--panel); margin: 0 0 .3rem; }
   margin-bottom: 8px;
   line-height: 1.25;
   min-height: 3.2em; 
-
-
 }
 .grid {
   display: grid;
