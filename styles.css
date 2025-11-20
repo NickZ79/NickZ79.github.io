@@ -126,8 +126,7 @@ h1, h2, h3 { color: var(--panel); margin: 0 0 .3rem; }
 @media (min-width: 900px) { .grid.cols-2 { grid-template-columns: 1.2fr .8fr; } }
 @media (min-width: 700px) { .grid.cols-3 { grid-template-columns: repeat(3, minmax(0,1fr)); } }
 /* Soft, subtle card styling for all cards */
-.card,
-.sql-php-card {
+.card{
   background: rgba(255, 255, 255, 0.05);           /* Very light panel fill */
   border: 1px solid rgba(255, 255, 255, 0.15);     /* Soft border */
   border-radius: 14px;                              /* Smooth edges */
@@ -142,7 +141,7 @@ h1, h2, h3 { color: var(--panel); margin: 0 0 .3rem; }
   min-height: 220px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 10px;
   transition:
     transform .2s ease,
@@ -164,7 +163,7 @@ h1, h2, h3 { color: var(--panel); margin: 0 0 .3rem; }
   color: var(--panel);
   margin-bottom: 8px;
   line-height: 1.25;
-  min-height: 3.2em; 
+  min-height: 2.6em; 
 }
 .grid {
   display: grid;
@@ -236,5 +235,5 @@ footer { border-top: 1px solid var(--line); margin-top: 42px; }
   letter-spacing: .1em;
   text-transform: uppercase;
   display: block;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
