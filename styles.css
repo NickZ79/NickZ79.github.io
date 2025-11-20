@@ -87,7 +87,14 @@ h1, h2, h3 { color: var(--panel); margin: 0 0 .3rem; }
   min-height: 100vh; display: flex; flex-direction: column;
   justify-content: center; align-items: center; text-align: center; padding: 72px 20px 48px;
 }
-.lead { color: var(--text-2); max-width: 760px; }
+.lead {
+  color: var(--text-2);
+  max-width: 760px;
+  margin: 0 auto;        /* centers the block itself */
+  text-align: center;    /* centers the text inside */
+}
+
+ 
 
 /* Portrait glow */
 .hero img {

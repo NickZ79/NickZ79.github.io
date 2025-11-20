@@ -12,21 +12,8 @@
 </head>
 
 <body>
-  <!-- NAV -->
-  <nav class="nav scrolled">
-    <div class="nav-inner">
-      <div class="brand">
-        <div class="logo">NZ</div>
-        <a href="index.html">Back to Portfolio</a>
-      </div>
-      <div class="nav-links">
-        <a href="index.html#home">Home</a>
-        <a href="QA Work/QA Work.html">QA Work</a>
-        <a href="index.html#school-projects">School Projects</a>
-        <a href="contact.html">Contact</a>
-      </div>
-    </div>
-  </nav>
+  <!-- Dynamic Header -->
+  <div id="header"></div>
 
   <main class="container" style="padding-top:90px; padding-bottom:40px;">
 
@@ -77,21 +64,38 @@
     </section>
   </main>
 
-  <footer>
-    <div class="foot-inner">
-      <span>© <span id="year"></span> Nicholas Zastrow</span>
-      <div class="links">
-        <a href="index.html">Portfolio</a>
-        <a href="#top" onclick="window.scrollTo({top:0, behavior:'smooth'}); return false;">Top</a>
-      </div>
-    </div>
-  </footer>
+  <!-- Dynamic Footer -->
+  <div id="footer"></div>
 
+  <!-- Shared header/footer loader -->
   <script>
-    // Year in footer
-    document.getElementById('year').textContent = new Date().getFullYear();
+    const BASE = "."; // contact.html lives at the site root
 
-    // Contact form logic
+    function loadPart(id, file) {
+      fetch(BASE + "/includes/" + file)
+        .then(resp => resp.text())
+        .then(html => {
+          // Replace {{BASE}} inside header/footer with correct prefix
+          html = html.replace(/{{BASE}}/g, BASE + "/");
+          document.getElementById(id).innerHTML = html;
+
+          // Footer year
+          if (id === "footer") {
+            const yearSpan = document.getElementById("year");
+            if (yearSpan) {
+              yearSpan.textContent = new Date().getFullYear();
+            }
+          }
+        })
+        .catch(err => console.error("Include load error for " + file, err));
+    }
+
+    loadPart("header", "header.html");
+    loadPart("footer", "footer.html");
+  </script>
+
+  <!-- Contact form logic -->
+  <script>
     const form = document.getElementById('contactForm');
     const errorEl = document.getElementById('formError');
     const successEl = document.getElementById('formSuccess');
@@ -129,10 +133,10 @@
         '?subject=' + encodeURIComponent(subject) +
         '&body=' + encodeURIComponent(body);
 
-      // Open default mail client with pre-filled email
+      // Open default mail client
       window.location.href = mailtoLink;
 
-      // Show success message on the page
+      // Show success message and clear form
       successEl.textContent = 'Thank you for reaching out! I will contact you within 72 hours.';
       form.reset();
     });

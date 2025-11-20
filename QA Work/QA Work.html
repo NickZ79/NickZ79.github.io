@@ -111,23 +111,8 @@
 </head>
 
 <body>
-  <!-- NAV -->
-  <nav class="nav scrolled">
-    <div class="nav-inner">
-      <div class="brand">
-        <div class="logo">NZ</div>
-        <a class="brand-name" href="../index.html">Back to Portfolio</a>
-      </div>
-      <div class="nav-links">
-        <a href="#hero">Overview</a>
-        <a href="#summary">Scope</a>
-        <a href="#timeline">Timeline</a>
-        <a href="#workflow">Bug Workflow</a>
-        <a href="#achievements">Highlights</a>
-        <a href="#lessons">Lessons</a>
-      </div>
-    </div>
-  </nav>
+  <!-- Dynamic Header -->
+  <div id="header"></div>
 
   <!-- HERO / EMBED -->
   <header class="qa-hero" id="hero">
@@ -328,7 +313,7 @@
     <section class="section" style="text-align:center;">
       <h2>Want to know more?</h2>
       <p class="lead">
-        I’m happy to walk through this Sagen live, discuss my regression plans, or talk about
+        I’m happy to walk through the Sagen at the top of the page, discuss my regression plans, or talk about
         how I’d approach QA at your company.
       </p>
       <div class="cta" style="margin-top:12px;">
@@ -339,18 +324,29 @@
   </main>
 
   <!-- FOOTER -->
-  <footer>
-    <div class="foot-inner">
-      <span>© <span id="year"></span> Nicholas Zastrow</span>
-      <div class="links">
-        <a href="#hero">Top</a>
-        <a href="../index.html">Portfolio</a>
-      </div>
-    </div>
-  </footer>
-
+    <!-- Dynamic Footer -->
+  <div id="footer"></div>
+<!-- Loader Script (placed before any content for reliability) -->
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    const BASE = ".."; // QA Work lives in a subfolder
+
+    function loadPart(id, file) {
+      fetch(BASE + "/includes/" + file)
+        .then(r => r.text())
+        .then(html => {
+          html = html.replace(/{{BASE}}/g, BASE);
+          document.getElementById(id).innerHTML = html;
+
+          // Footer year update
+          if (id === "footer") {
+            const y = document.getElementById("year");
+            if (y) y.textContent = new Date().getFullYear();
+          }
+        })
+        .catch(err => console.error("Include load error:", file, err));
+    }
+    loadPart("header", "header.html");
+    loadPart("footer", "footer.html");
   </script>
 </body>
 </html>
