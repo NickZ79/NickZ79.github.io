@@ -10,7 +10,7 @@ body {
 
 /* Page-specific Backgrounds */
 body:not(.index-page):not(.brindlewood-bay) {
-    background-image: url('./images/stranger.jpeg');
+    background-image: url('./images/Stranger.jpeg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
