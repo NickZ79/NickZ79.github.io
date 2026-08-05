@@ -3,308 +3,232 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nicholas Zastrow — Portfolio</title>
-  <meta name="description" content="Professional portfolio of Nicholas Zastrow — Software QA Analyst and Developer." />
+  <title>Nicholas K. Zastrow — Software QA Analyst &amp; Web Developer</title>
+  <meta name="description" content="Nicholas K. Zastrow — Software QA Analyst and Web Developer. Two-plus years testing web, mobile, and Unity WebGL platforms, most of it as sole QA analyst at Sagenverse." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
 </head>
-
-<body>
-  <!-- Dynamic Header (loaded from includes/header.html) -->
+<body data-page="home">
   <div id="header"></div>
 
-  <main>
-    <!-- HERO SECTION -->
-    <header class="hero" id="home">
-      <img src="images/me.jpg" alt="Portrait of Nicholas Zastrow" />
-      <h1 class="title-xl">Nicholas Zastrow</h1>
-      <p class="lead">
-        Software QA Analyst and Web Developer passionate about quality, usability, and clean code.
-        Over 2.5 years of QA experience at Sagenverse, blending technical skill with creative design.
-      </p>
-      <div class="cta">
-        <a href="#qa-work" class="btn btn-primary">QA Work</a>
-        <a href="#school-projects" class="btn btn-ghost">School Projects</a>
-      </div>
-    </header>
+  <main class="container">
+    <div class="view">
 
-    <!-- QA WORK SUMMARY -->
-    <section id="qa-work" class="section container">
-      <h2 class="title-xl" style="text-align:center; margin-bottom:20px;">QA Work</h2>
-      <div class="grid cols-3">
-         <div></div> <!-- empty left column -->
-        <div class="feature">
-          <span class="kicker">Sagenverse</span>
-          <span class="title">WebGL &amp; Mobile App QA</span>
-          <p class="muted">
-            Exploratory and regression testing across Unity and React Native builds. Test planning, defect documentation, 
-            Monday board workflows, and cross-team verification for multiple releases.
-          </p>
-           <p style="margin-top:18px; text-align:center;">
-        <a class="btn btn-primary" href="QAWork/QAWork.html">View QA Experience
-        </a>
-      </p>
-        </div>
-        <div></div> <!-- empty right column -->
-      </div>
-    </section>
+      <!-- Sec 01 — Personnel File (hero) -->
+      <section class="hero">
+        <div>
+          <div class="intro-head">
+            <span class="eyebrow">Sec 01 &middot; Personnel File</span>
+            <span class="rule"></span>
+          </div>
 
-    <!-- SCHOOL PROJECTS -->
-    <section id="school-projects" class="section container">
-      <h2 class="title-xl" style="text-align:center; margin-bottom:10px;">School Projects</h2>
+          <h1 class="hero-title">Nicholas K.<br>Zastrow</h1>
 
-      <!-- WEB PROJECTS (LIVE DEMOS) -->
-      <h3 style="text-align:center; margin:10px 0 16px;">Web Projects (Live Demos)</h3>
-      <div class="grid cols-3" style="margin-bottom:22px;">
+          <div class="chip-row">
+            <span class="chip-solid">Software QA Analyst</span>
+            <span class="chip-outline">Web Developer</span>
+            <span class="chip-amber">CTFL &middot; In Progress</span>
+          </div>
 
-        <!-- HTML & CSS Final -->
-        <div class="feature">
-          <span class="kicker">HTML &amp; CSS</span>
-          <span class="title">TTRPG Multi-Page Site (Final)</span>
-          <p class="muted">
-            A seven-page, TTRPG-themed website with shared navigation, custom styling, images, and embedded content,
-            built as the final project for an HTML &amp; CSS course.
-          </p>
-          <p style="margin-top:6px; text-align: center;">
-            <a class="btn btn-primary"
-               href="projects/web-projects/HTML_CSS_FINAL/index.html"
-               target="_blank" rel="noopener">Open Project →</a>
-          </p>
-          <p style="margin-top:6px; text-align: center;">
-            <a class="btn btn-ghost"
-               href="https://github.com/NickZ79/HTML_CSS_projects/tree/main/HTML_CSS_Final"
-               target="_blank" rel="noopener">View on GitHub →</a>
-          </p>
+          <p class="text-lead">Two-plus years testing web platforms, mobile apps, and cross-platform interactive environments &mdash; most of it as the <em>sole QA analyst</em> at Sagenverse, where I built the testing process from the ground up.</p>
+          <p class="text-sub">Manual and exploratory testing, regression cycles, test case design, and cross-functional Agile collaboration &mdash; backed by an A.A.S. in Web Development, so I read the code I'm testing.</p>
+
+          <div class="btn-row">
+            <a href="/service-record/" class="btn btn-primary">Open Service Record <span>&rarr;</span></a>
+            <a href="/projects/" class="btn btn-secondary">Project Archive</a>
+            <a href="/files/Nicholas-Zastrow-Resume.pdf" target="_blank" class="btn btn-tertiary">R&eacute;sum&eacute; &darr;</a>
+          </div>
         </div>
 
-        <!-- JavaScript Midterm -->
-        <div class="feature">
-          <span class="kicker">JavaScript</span>
-          <span class="title">Midterm — Food Ordering System</span>
-          <p class="muted">
-            A restaurant-style order form that calculates the subtotal based on selected items, applies a tip
-            percentage, and returns the grand total using client-side JavaScript.
-          </p>
-          <p style="margin-top:6px; text-align: center;">
-            <a class="btn btn-primary"
-               href="projects/web-projects/Midterm_Order_Form/index.html"
-               target="_blank" rel="noopener">Open Project →</a>
-          </p>
-          <p style="margin-top:6px; text-align: center;">
-            <a class="btn btn-ghost"
-               href="https://github.com/NickZ79/JavaScript_projects/tree/main/Midterm_Order_Form"
-               target="_blank" rel="noopener">View on GitHub →</a>
-          </p>
-        </div>
-
-        <!-- JavaScript Final -->
-        <div class="feature">
-          <span class="kicker">JavaScript</span>
-          <span class="title">Final — Multi-Page Website</span>
-          <p class="muted">
-            A fully structured multi-page site (4+ pages) implementing shared navigation, Modernizr integration,
-            math functions, decision logic, and form validation, all passing W3C validation.
-          </p>
-          <p style="margin-top:6px; text-align: center;">
-            <a class="btn btn-primary"
-               href="projects/web-projects/Final_Multi_Page_Site/index.html"
-               target="_blank" rel="noopener">Open Project →</a>
-          </p>
-          <p style="margin-top:6px; text-align: center;">
-            <a class="btn btn-ghost"
-               href="https://github.com/NickZ79/JavaScript_projects/tree/main/Final_Multi_Page_Site"
-               target="_blank" rel="noopener">View on GitHub →</a>
-          </p>
-        </div>
-      </div>
-
-      <!-- C# CASE STUDIES -->
-      <h3 style="text-align:center; margin:18px 0 12px;">C# Case Studies</h3>
-      <div class="grid cols-3" style="margin-bottom:22px;">
-
-        <!-- Bakery Shop -->
-        <div class="feature">
-          <span class="kicker">C# / WinForms</span>
-          <span class="title">Bakery Shop Order Form</span>
-          <p class="muted">
-            A Windows Forms application that calculates item subtotals, sales tax, optional discounts, and
-            overall order totals, with a clear form workflow and basic validation.
-          </p>
-          <p style="margin-top:6px; text-align: center;"> 
-            <a class="btn btn-primary" href="projects/case-studies/csharp-bakery.html">
-              View Bakery Case Study →
-            </a>
-          </p>
-          <p style="margin-top:6px; text-align: center;">
-            <a class="btn btn-ghost"
-               href="https://github.com/NickZ79/Csharp_projects/tree/main/Bakery_Shop_Project"
-               target="_blank" rel="noopener">View on GitHub →</a>
-          </p>
-        </div>
-
-        <!-- Pizza Order Form -->
-        <div class="feature">
-          <span class="kicker">C# / WinForms</span>
-          <span class="title">Pizza Order Form</span>
-          <p class="muted">
-            A pizza ordering interface that collects customer info, toggles delivery fields, manages crust, size,
-            toppings, and pricing rules, and displays a formatted order summary.
-          </p>
-          <p  style="margin-top:6px; text-align: center;">
-            <a class="btn btn-primary" href="projects/case-studies/csharp-pizza-order.html">
-              View Pizza Case Study →
-            </a>
-          </p>
-          <p style="margin-top:6px; text-align: center;">
-            <a class="btn btn-ghost"
-               href="https://github.com/NickZ79/Csharp_projects/tree/main/Pizza__Order_Form_Project"
-               target="_blank" rel="noopener">View on GitHub →</a>
-          </p>
-        </div>
-        <!-- C# placeholder -->
-       <div class="feature">
-        <span class="kicker">C# / WinForms</span>
-        <span class="title">Future C# Project</span>
-         <p class="muted">
-           Space reserved for another Windows Forms application or desktop utility
-            that builds on data binding, validation, or multi-form workflows.
-          </p>
-        <p  style="margin-top:6px; text-align: center;">
-           <a class="btn btn-ghost" href="#" onclick="alert('Coming soon!'); return false;">
-           Coming Soon</a>
-          </p>
+        <div class="portrait-wrap">
+          <div class="portrait-panel corner-tick">
+            <div class="portrait-figure">
+              <img src="/images/me.jpg" alt="Nicholas Zastrow" />
+              <div class="portrait-tint"></div>
+              <div class="portrait-scan"></div>
             </div>
+            <div class="figure-caption">
+              <span>FIG. 1 &mdash; Operator</span>
+              <span class="accent">ID NKZ-1701</span>
+            </div>
+          </div>
+          <div class="visual-record">Visual record</div>
+          <div class="hairline-grid stat-strip">
+            <div class="cell">
+              <div class="k">Home Port</div>
+              <div class="v">Westland, MI</div>
+            </div>
+            <div class="cell">
+              <div class="k">Status</div>
+              <div class="v green">Open to hire</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sec 02 — Systems Readout -->
+      <section class="section-pad">
+        <div class="section-head">
+          <span class="eyebrow">Sec 02</span>
+          <h2 class="sec-title">Systems Readout</h2>
+          <span class="rule"></span>
+          <span class="sec-meta">Sagenverse &middot; Jul 2023 &ndash; Nov 2025</span>
+        </div>
+        <div class="hairline-grid readout-grid">
+          <div class="cell">
+            <div class="readout-value">2+</div>
+            <div class="readout-label">Years QA</div>
+            <div class="readout-note">Sole tester, full ownership</div>
+          </div>
+          <div class="cell">
+            <div class="readout-value">20</div>
+            <div class="readout-label">Sprint Cycles</div>
+            <div class="readout-note">Planning, standups, review</div>
+          </div>
+          <div class="cell">
+            <div class="readout-value">2</div>
+            <div class="readout-label">Major Releases</div>
+            <div class="readout-note">2.0 launch + early 2.1</div>
+          </div>
+          <div class="cell">
+            <div class="readout-value">~5</div>
+            <div class="readout-label">Defects / Sprint</div>
+            <div class="readout-note">Logged, reproduced, tracked</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sec 03 — Primary Assignment -->
+      <section class="section-pad">
+        <div class="section-head">
+          <span class="eyebrow">Sec 03</span>
+          <h2 class="sec-title">Primary Assignment</h2>
+          <span class="rule"></span>
+        </div>
+        <a href="/service-record/" class="assignment-panel corner-tick">
+          <div>
+            <div class="assignment-eyebrow">Sole QA Analyst &middot; Ann Arbor, MI</div>
+            <h3 class="assignment-title">QA at Sagenverse</h3>
+            <p class="assignment-body">Manual and exploratory testing across Unity WebGL, React Native mobile apps, and the web platform. I wrote the 2.0 regression plan from scratch, built the team's Monday QA board, and owned smoke tests, hotfix verification, and release sign-off.</p>
+            <div class="tag-row">
+              <span class="tag">Unity WebGL</span>
+              <span class="tag">React Native</span>
+              <span class="tag">BrowserStack</span>
+              <span class="tag">Monday.com</span>
+              <span class="tag">Agile &middot; 20 sprints</span>
+            </div>
+          </div>
+          <div class="assignment-right">
+            <div class="ghost-num">01</div>
+            <div class="open-file">Open file &rarr;</div>
+          </div>
+        </a>
+      </section>
+
+      <!-- Sec 04 — Capability Matrix -->
+      <section class="section-pad">
+        <div class="section-head">
+          <span class="eyebrow">Sec 04</span>
+          <h2 class="sec-title">Capability Matrix</h2>
+          <span class="rule"></span>
+        </div>
+        <div class="capability-grid">
+          <div class="capability-col">
+            <div class="capability-title">Testing</div>
+            <ul class="capability-list">
+              <li><span class="bullet">&#9670;</span><span>Manual &amp; exploratory testing</span></li>
+              <li><span class="bullet">&#9670;</span><span>Test case design</span></li>
+              <li><span class="bullet">&#9670;</span><span>Regression testing</span></li>
+              <li><span class="bullet">&#9670;</span><span>API testing (Postman)</span></li>
+            </ul>
+          </div>
+          <div class="capability-col">
+            <div class="capability-title">Tools</div>
+            <ul class="capability-list">
+              <li><span class="bullet">&#9670;</span><span>BrowserStack</span></li>
+              <li><span class="bullet">&#9670;</span><span>Monday.com</span></li>
+              <li><span class="bullet">&#9670;</span><span>Git / GitHub</span></li>
+              <li><span class="bullet">&#9670;</span><span>Visual Studio</span></li>
+            </ul>
+          </div>
+          <div class="capability-col">
+            <div class="capability-title">Languages</div>
+            <ul class="capability-list">
+              <li><span class="bullet">&#9670;</span><span>HTML &amp; CSS</span></li>
+              <li><span class="bullet">&#9670;</span><span>JavaScript</span></li>
+              <li><span class="bullet">&#9670;</span><span>SQL</span></li>
+              <li><span class="bullet">&#9670;</span><span>Java &middot; C#</span></li>
+            </ul>
+          </div>
+          <div class="capability-col">
+            <div class="capability-title">Platforms</div>
+            <ul class="capability-list">
+              <li><span class="bullet">&#9670;</span><span>Chrome &middot; Firefox &middot; Safari &middot; Edge</span></li>
+              <li><span class="bullet">&#9670;</span><span>iOS &amp; Android devices</span></li>
+              <li><span class="bullet">&#9670;</span><span>Unity WebGL builds</span></li>
+              <li><span class="bullet">&#9670;</span><span>Windows &amp; Linux QA envs</span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sec 05 — Duty Log -->
+      <section class="section-pad">
+        <div class="section-head">
+          <span class="eyebrow">Sec 05</span>
+          <h2 class="sec-title">Duty Log</h2>
+          <span class="rule"></span>
+        </div>
+        <div class="duty-log">
+          <div class="duty-row">
+            <div class="duty-years">2023 &ndash; 2025</div>
+            <div>
+              <div class="duty-role-row">
+                <span class="duty-role">Software QA Analyst</span>
+                <span class="duty-org">Sagenverse &middot; Ann Arbor, MI</span>
               </div>
-      <!-- JAVA CASE STUDIES -->
-      <h3 style="text-align:center; margin:18px 0 12px;">Java Case Studies</h3>
-      <div class="grid cols-3" style="margin-bottom:22px;">
-
-        <!-- Pizza Maker (Java) -->
-        <div class="feature">
-          <span class="kicker">Java</span>
-          <span class="title">Pizza Maker (OOP &amp; Testing)</span>
-          <p class="muted">
-            A console-based pizza builder that uses ingredient classes, pricing logic, and a custom test harness
-            to validate multiple pizza combinations.
-          </p>
-          <p> <p style="margin-top:6px; text-align: center;">
-            <a class="btn btn-primary" href="projects/case-studies/java-pizza-maker.html">
-              View Java Pizza Case Study →
-            </a>
-          </p>
-          <p style="margin-top:6px; text-align: center;">
-            <a class="btn btn-ghost"
-               href="https://github.com/NickZ79/java_projects/tree/main/NKZ_pizza_maker"
-               target="_blank" rel="noopener">View on GitHub →</a>
-          </p>
+              <p class="duty-detail">Sole QA analyst across web, React Native mobile, and Unity WebGL. Wrote and maintained test cases and regression checklists, ran full regression cycles ahead of each release, and validated across browsers and devices with BrowserStack to catch cross-platform issues before they shipped.</p>
+            </div>
+          </div>
+          <div class="duty-row">
+            <div class="duty-years">2025 &ndash; Present</div>
+            <div>
+              <div class="duty-role-row">
+                <span class="duty-role">Independent QA &amp; Web Dev</span>
+                <span class="duty-org">Code and Codex LLC</span>
+              </div>
+              <p class="duty-detail">Continued hands-on QA and web development practice, plus ISTQB CTFL certification study &mdash; expected August 2026.</p>
+            </div>
+          </div>
+          <div class="duty-row">
+            <div class="duty-years">2021 &ndash; 2023</div>
+            <div>
+              <div class="duty-role-row">
+                <span class="duty-role">Customer Service Rep</span>
+                <span class="duty-org">Waste Management</span>
+              </div>
+              <p class="duty-detail">High-volume support for residential and commercial customers, resolving service, billing, and logistics issues and coordinating with operations teams for accurate, timely delivery.</p>
+            </div>
+          </div>
+          <div class="duty-row">
+            <div class="duty-years">2020 &ndash; 2021</div>
+            <div>
+              <div class="duty-role-row">
+                <span class="duty-role">Data Specialist</span>
+                <span class="duty-org">Repair Clinic</span>
+              </div>
+              <p class="duty-detail">Maintained accurate records for corporate part shipments &mdash; tracking, invoicing, and replacement workflows &mdash; and worked directly with logistics to resolve order discrepancies.</p>
+            </div>
+          </div>
         </div>
+      </section>
 
-        <!-- Loan Calculator (Java) -->
-        <div class="feature">
-          <span class="kicker">Java</span>
-          <span class="title">Loan Calculator</span>
-          <p class="muted">
-            Builds formatted loan summaries with borrower information, defaults for missing values, and a helper
-            to calculate loan end dates, plus a small test harness for multiple scenarios.
-          </p>
-          <p> <p style="margin-top:6px; text-align: center;">
-            <a class="btn btn-primary" href="projects/case-studies/java-loan-calculator.html">
-              View Loan Case Study →
-            </a>
-          </p>
-          <p style="margin-top:6px; text-align: center;">
-            <a class="btn btn-ghost"
-               href="https://github.com/NickZ79/java_projects/tree/main/NKZ_loan_calculator"
-               target="_blank" rel="noopener">View on GitHub →</a>
-          </p>
-        </div>
-
-        <!-- Java placeholder -->
-        <div class="feature">
-         <span class="kicker">Java</span>
-          <span class="title">Future Java Project</span>
-          <p class="muted">
-              Space reserved for another OOP or algorithms-focused Java assignment,
-              such as a console utility, data-structure demo, or small CLI tool.
-            </p>
-            <p style="margin-top: 6px; text-align: center;">
-              <a class="btn btn-ghost" href="#" onclick="alert('Coming soon!'); return false;">
-                Coming Soon </a>
-           </p>
-       </div>
-      </div>
-       
-   <!-- SQL & PHP/MYSQL CASE STUDY -->
-<h3 style="text-align:center; margin:18px 0 12px;">SQL Databases &amp; PHP / MySQL</h3>
-
-<div class="grid cols-3">
-  <div></div> <!-- empty left column -->
-
-  <div class="feature sql-php-card">
-    <span class="kicker">SQL &amp; PHP</span>
-    <span class="title">Family Reunion DB &amp; Online Banking</span>
-
-    <p class="muted">
-      A combined case study covering a family-reunion relational database (schema design, queries)
-      and a PHP/MySQL midterm project simulating account balances and customer views.
-    </p>
-
-    <div class="sql-php-actions">
-      <p style="margin-top:6px; text-align: center;">
-      <a class="btn btn-primary" href="projects/case-studies/sql-php-databases.html">
-        View SQL/PHP Case Study →
-      </a>
-      </p>
-      <p style="margin-top:6px; text-align: center;">
-      <a class="btn btn-ghost"
-         href="https://github.com/NickZ79/SQL_Database_projects"
-         target="_blank" rel="noopener">
-        SQL Projects on GitHub →
-      </a>
-      </p>
-      <p style="margin-top:6px; text-align: center;">
-        <a class="btn btn-ghost"
-         href="https://github.com/NickZ79/PHP_MYSQL_projects"
-         target="_blank" rel="noopener">
-        PHP/MySQL Projects on GitHub →
-      </a>
-      </p>
-  
     </div>
-  </div>
-  <div></div> <!-- empty right column -->
-</div>
-    </section>
   </main>
 
-  <!-- Dynamic Footer (loaded from includes/footer.html) -->
   <div id="footer"></div>
-  <!-- Include Loader Script -->
-  <script>
-  function loadPart(id, file) {
-    // Always load from the site root: /includes/header.html, /includes/footer.html
-    fetch("/includes/" + file)
-      .then(resp => resp.text())
-      .then(html => {
-        document.getElementById(id).innerHTML = html;
-
-        // Keep the dynamic year in the footer
-        if (id === "footer") {
-          const yearSpan = document.getElementById("year");
-          if (yearSpan) {
-            yearSpan.textContent = new Date().getFullYear();
-          }
-        }
-      })
-      .catch(err => console.error("Include load error for " + file, err));
-  }
-
-  document.addEventListener("DOMContentLoaded", () => {
-    loadPart("header", "header.html");
-    loadPart("footer", "footer.html");
-  });
-  </script>
+  <script src="/js/main.js"></script>
 </body>
 </html>

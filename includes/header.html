@@ -1,15 +1,35 @@
 <!-- includes/header.html -->
-<nav class="nav" id="mainNav">
-  <div class="nav-inner">
-    <div class="brand">
-      <div class="logo">NZ</div>
-      <a href="/index.html">Nicholas Zastrow</a>
-    </div>
-    <div class="nav-links">
-      <a href="/index.html#home">Home</a>
-      <a href="/QA%20Work/QA%20Work.html">QA Work</a>
-      <a href="/index.html#school-projects">School Projects</a>
-      <a href="/contact.html">Contact</a>
-    </div>
+<header class="site-header">
+  <div class="header-row1">
+    <a href="/index.html" class="brand" aria-label="Home">
+      <span class="brand-mark"><span class="brand-mark-fill"></span></span>
+      <span class="brand-word">N&middot;K&middot;Zastrow</span>
+    </a>
+
+    <nav class="site-nav" id="siteNav" aria-label="Primary">
+      <a href="/index.html" data-nav="home">Home</a>
+      <a href="/service-record/" data-nav="qa">Service Record</a>
+      <a href="/projects/" data-nav="projects">Archive</a>
+      <a href="/contact.html" data-nav="contact">Hail</a>
+    </nav>
+
+    <button type="button" class="audio-toggle" id="audioToggle" aria-pressed="false">
+      <span class="audio-dot" aria-hidden="true"></span>
+      <span class="audio-label">Audio Off</span>
+    </button>
+
+    <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Toggle navigation menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
-</nav>
+
+  <div class="header-row2">
+    <span>SD <span id="stardate">&mdash;</span></span>
+    <span class="status-sep">/</span>
+    <span class="status-coords">Westland, MI &middot; 42.32&deg;N 83.40&deg;W</span>
+    <span class="status-sep status-coords">/</span>
+    <span class="status-ok">All systems nominal</span>
+    <span class="status-fill"></span>
+    <span class="status-rev">Rev 2.6</span>
+  </div>
+</header>

@@ -3,159 +3,80 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Java Loan Calculator Case Study — Nicholas Zastrow</title>
-  <meta name="description" content="Java Loan Calculator case study by Nicholas Zastrow — formatted loan summaries, helper classes, and a custom test runner." />
+  <title>Case File: Loan Calculator | Nicholas K. Zastrow</title>
+  <meta name="description" content="Java case file — Loan Calculator: formatted loan summaries, sensible defaults, and a date-arithmetic helper with a small test harness." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
 </head>
+<body data-page="projects">
+  <div id="header"></div>
 
-<body>
-  <nav class="nav scrolled">
-    <div class="nav-inner">
-      <div class="brand">
-        <div class="logo">NZ</div>
-        <a href="../../index.html">Back to Portfolio</a>
-      </div>
-      <div class="nav-links">
-        <a href="../../index.html#school-projects">School Projects</a>
-        <a href="java-pizza-maker.html">Pizza Maker</a>
-        <a href="javascript:void(0)" onclick="window.scrollTo({top:0, behavior:'smooth'});">Top</a>
-      </div>
+  <main class="container">
+    <div class="view">
+
+      <section style="padding:56px 0 0;">
+        <a href="/projects/" class="case-back">&larr; Back to archive</a>
+        <div class="case-meta">
+          <span class="eyebrow eyebrow-amber">Java Case File</span>
+          <span class="rule-amber"></span>
+          <span class="sec-meta">CS-04 &middot; Java</span>
+        </div>
+        <h1 class="case-title">Loan Calculator</h1>
+        <p class="case-summary">Builds formatted loan summaries with borrower information, sensible defaults for missing values, and a helper that calculates loan end dates &mdash; plus a small test harness for multiple scenarios.</p>
+        <div class="btn-row">
+          <a href="https://github.com/NickZ79/java_projects/tree/main/NKZ_loan_calculator" target="_blank" rel="noopener" class="btn btn-primary">View source &#8599;</a>
+        </div>
+      </section>
+
+      <section class="case-body">
+        <div>
+          <div class="case-section-head">
+            <span class="eyebrow">Sec 01</span>
+            <h2 class="sec-title">Overview</h2>
+            <span class="rule"></span>
+          </div>
+          <div class="case-overview">
+            <p>The calculator assembles a formatted loan summary from borrower information, filling in defaults where values are missing so the program never fails on incomplete input.</p>
+            <p>A date helper derives the loan end date from the start date and term, and a small test harness runs several borrower scenarios to confirm the formatting and math hold up.</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="case-section-head">
+            <span class="eyebrow">Debrief</span>
+            <span class="rule"></span>
+          </div>
+          <div class="debrief-panel">
+            <div class="debrief-label">What I Took Away</div>
+            <ul class="debrief-list">
+              <li><span class="bullet">&#9656;</span><span>Defensive defaults for missing or partial input.</span></li>
+              <li><span class="bullet">&#9656;</span><span>Date arithmetic and formatting in Java.</span></li>
+              <li><span class="bullet">&#9656;</span><span>Building repeatable scenario tests instead of one-off manual checks.</span></li>
+              <li><span class="bullet">&#9656;</span><span>Producing output that reads cleanly to a non-technical user.</span></li>
+            </ul>
+          </div>
+          <div class="spec-grid">
+            <div class="spec-row"><span class="spec-k">Language</span><span class="spec-v">Java</span></div>
+            <div class="spec-row"><span class="spec-k">Type</span><span class="spec-v">Console app</span></div>
+            <div class="spec-row"><span class="spec-k">Focus</span><span class="spec-v">Defaults + dates</span></div>
+            <div class="spec-row"><span class="spec-k">Course</span><span class="spec-v">Java Programming</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section style="padding:56px 0 0;">
+        <div class="case-actions">
+          <a href="/projects/" class="btn btn-secondary">&larr; All projects</a>
+          <a href="/contact.html" class="btn btn-tertiary">Get in touch</a>
+        </div>
+      </section>
+
     </div>
-  </nav>
-
-  <main class="container" style="padding-top:90px; padding-bottom:40px;">
-    <header class="section">
-      <span class="kicker">Java Case Study</span>
-      <h1 class="title-xl">Loan Calculator — Loan Summary Builder</h1>
-      <p class="lead">
-        A Java console application that builds formatted loan summaries, including borrower name, loan amount,
-        term, interest rate, and a calculated end date using a helper class. A simple test runner validates
-        multiple scenarios.
-      </p>
-      <div class="cta" style="margin-top:14px;">
-        <a class="btn btn-primary"
-           href="https://github.com/NickZ79/java_projects/tree/main/NKZ_loan_calculator"
-           target="_blank" rel="noopener">View Source on GitHub →</a>
-      </div>
-    </header>
-
-    <!-- Screenshots -->
-    <section class="section">
-      <h2>Screenshots</h2>
-      <div class="grid cols-3" style="margin-top:12px;">
-        <div class="card">
-          <h3>Loan Class</h3>
-          <img src="/images/Java/loan/Loan.jpg" alt="Screenshot of the Loan class in Java." />
-          <p class="muted">Represents the core loan data: borrower, amount, term, interest rate, and summary output.</p>
-        </div>
-        <div class="card">
-          <h3>LoanCreator Logic</h3>
-          <img src="/images/Java/loan/LoanTestResults.jpg" alt="Screenshot of the LoanCreator class in Java." />
-          <p class="muted">Handles user inputs and builds the loan summary string, applying defaults when needed.</p>
-        </div>
-        <div class="card">
-          <h3>Test Code</h3>
-          <img src="/images/Java/loan/LoanCreatorTest.jpg" alt="Screenshot of the loan test logic in Java." />
-          <p class="muted">Original JUnit-style tests used to validate output before converting to a standalone runner.</p>
-        </div>
-      </div>
-
-      <div class="grid cols-3" style="margin-top:18px;">
-        <div></div> <!-- empty left column -->
-        <div class="card">
-          <h3>Test Runner Output</h3>
-          <img src="/images/Java/loan/LoanTestResults.jpg" alt="Screenshot of LoanCreator test runner console output." />
-          <p class="muted">Console output showing several loan scenarios being created and verified against expected summaries.</p>
-        </div>
-        <div></div> <!-- empty right column -->
-      </div>
-    </section>
-
-    <!-- Overview -->
-    <section class="section">
-      <h2>Project Overview</h2>
-      <p>
-        This assignment focused on working with methods, parameters, and formatted output in Java. The program
-        takes in borrower information and loan details, fills in defaults when some values are missing, and then
-        produces a readable summary. A helper class, <code>LoanDateCalculator</code>, is used to determine the end
-        date of the loan based on the term.
-      </p>
-      <p>
-        The design separates responsibilities so that each class has a clear purpose: one for building the loan,
-        one for calculating dates, and one for testing the logic. This makes the code easier to extend and maintain.
-      </p>
-    </section>
-
-    <!-- Code Highlight -->
-    <section class="section">
-      <h2>Key Logic (Summary Builder)</h2>
-      <p class="muted">A simplified example of how the loan summary string is built:</p>
-      <pre><code>public class LoanCreator {
-
-    public String execute(String firstName, String lastName,
-                          Integer amount, Integer termYears, Double interestRate) {
-
-        String borrower = firstName + " " + lastName;
-        int finalAmount = amount != null ? amount : 20000;
-        int finalTerm   = termYears != null ? termYears : 36;
-        double finalRate = interestRate != null ? interestRate : 5.0;
-
-        String endDate = LoanDateCalculator.calculate(finalTerm);
-
-        return "The loan for: " + borrower + "\n" +
-               "The loan amount is " + finalAmount + "\n" +
-               "The term is " + finalTerm + " years\n" +
-               "The interest rate is " + finalRate + "%\n" +
-               "The end date of the loan will be: " + endDate;
-    }
-}</code></pre>
-      <p class="muted">
-        The real project includes more context and validation, but this excerpt shows the core idea:
-        apply defaults when needed, delegate date calculation, and build a predictable summary string.
-      </p>
-    </section>
-
-    <!-- What I Learned -->
-    <section class="section">
-      <h2>What I Learned</h2>
-      <ul class="qa-list">
-        <li>How to break down a feature into clear responsibilities across multiple classes.</li>
-        <li>How to handle optional parameters by applying sensible default values.</li>
-        <li>How to build multi-line formatted strings reliably for comparison in tests.</li>
-        <li>How to create a small test harness to verify different input combinations.</li>
-      </ul>
-    </section>
-
-    <!-- CTA -->
-    <section class="section" style="text-align:center;">
-      <h2>Explore the Code</h2>
-      <p class="lead">
-        You can review the full implementation, including the date calculator and test runner, on GitHub.
-      </p>
-      <div class="cta" style="margin-top:10px;">
-        <a class="btn btn-primary"
-           href="https://github.com/NickZ79/java-projects/tree/main/NKZ_loan_calculator"
-           target="_blank" rel="noopener">View on GitHub →</a>
-        <a class="btn btn-ghost" href="../../index.html#school-projects">Back to School Projects</a>
-      </div>
-    </section>
   </main>
 
-  <footer>
-    <div class="foot-inner">
-      <span>© <span id="year"></span> Nicholas Zastrow</span>
-      <div class="links">
-        <a href="../../index.html">Portfolio</a>
-        <a href="#top" onclick="window.scrollTo({top:0, behavior:'smooth'}); return false;">Top</a>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <div id="footer"></div>
+  <script src="/js/main.js"></script>
 </body>
 </html>
